@@ -20,7 +20,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen relative overflow-hidden bg-background pt-24 md:pt-18 lg:pt-20"
+      className="h-[100dvh] relative overflow-hidden bg-background pt-16 sm:pt-20 md:pt-24 lg:pt-20 flex flex-col"
     >
       {/* Animated Background with moving gradients */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -166,7 +166,7 @@ export function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="hidden lg:block absolute bottom-0 right-0 w-1/2 pointer-events-none"
-        style={{ height: 'calc(100vh - 5rem)' }}
+        style={{ height: 'calc(100vh - 80px)' }}
       >
         <div className="relative h-full flex items-end justify-center w-full">
           {/* Subtle circular gradient glow */}
@@ -188,14 +188,14 @@ export function Hero() {
         </div>
       </motion.div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-5rem)] flex items-center relative pb-8 lg:pb-8">
-        <div className="max-w-7xl mx-auto w-full z-10 relative">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-8 xl:gap-12 items-start lg:items-center justify-between w-full">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex items-start relative min-h-0">
+        <div className="max-w-7xl mx-auto w-full z-10 relative h-full flex flex-col">
+          <div className="flex flex-col lg:flex-row gap-0 lg:gap-8 xl:gap-12 items-start lg:items-center justify-between w-full flex-1">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-center lg:text-left relative z-20 flex-1 w-full lg:order-1 pt-8 lg:pt-0"
+              className="text-center lg:text-left relative z-20 flex-shrink-0 w-full lg:order-1 lg:flex-1 pt-12 sm:pt-16 lg:pt-0 mb-6"
             >
               <motion.h2
                 className="font-bold mb-4 text-sm sm:text-base md:text-base lg:text-lg uppercase bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent animate-gradient drop-shadow-[0_2px_8px_rgba(168,85,247,0.8)]"
@@ -273,24 +273,25 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="lg:hidden relative w-full mt-auto"
+              className="lg:hidden relative w-full self-end min-h-0 mt-auto"
+              style={{ marginBottom: '-1px' }}
             >
-              <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] mx-auto">
+              <div className="relative w-full max-w-[220px] sm:max-w-[260px] md:max-w-[300px] mx-auto">
                 {/* Subtle circular gradient glow */}
                 <div
-                  className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-purple-500/30 blur-3xl opacity-70"
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-purple-500/30 blur-3xl opacity-70"
                 />
 
                 {/* Profile image container */}
-                <div className="relative">
+                <div className="relative w-full">
                   {/* Profile image */}
                   <motion.img
                     src="/images/profile1.png"
                     alt="Jabez Samson - Profile"
-                    className="relative w-full h-auto object-contain object-bottom"
+                    className="relative w-full h-auto object-contain object-bottom block"
                     style={{
                       filter: "drop-shadow(0 15px 50px rgba(0,0,0,0.9))",
-                      display: "block"
+                      maxHeight: "42vh"
                     }}
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
