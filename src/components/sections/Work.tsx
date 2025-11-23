@@ -64,9 +64,20 @@ const projects = [
       "AI-powered conversational interface replicating Google Gemini. Features real-time chat interactions, API integration with Gemini AI, and modern React UI with responsive design.",
     image:
       "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg",
-    tags: ["JavaScript", "Gemini API Integration", "DOM Manipulation"],
+    tags: ["JavaScript", "API Integration", "DOM Manipulation"],
     github: "https://github.com/jabezsamsondev-prog/gemini_clone",
     demo: "https://gemini-clone-6c34f.firebaseapp.com/",
+    category: "Frontend",
+  },
+  {
+    title: "Fish2Shark Website for Client",
+    description:
+      "Complete end-to-end marketing and advertising website for a Canadian marketing agency. Features responsive design, integrated contact forms, service showcases, and client testimonials with modern UI/UX.",
+    image:
+      "/images/fish2shark-screenshot.png",
+    tags: ["React", "Responsive Design", "Client Project"],
+    github: "https://github.com/jabezsamsondev-prog/fish2shark_website",
+    demo: "https://www.fish2shark.com/",
     category: "Frontend",
   },
 ];
@@ -120,7 +131,7 @@ export function Work() {
           ))}
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={index}
