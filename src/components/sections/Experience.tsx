@@ -67,7 +67,7 @@ export function Experience() {
         {/* Timeline for desktop, stacked cards for mobile */}
         <div className="relative">
           {/* Timeline line - hidden on mobile, visible on md+ */}
-          <div className="hidden md:block absolute left-[15px] lg:left-[calc(50%-2px)] top-0 bottom-0 w-1 bg-primary/40 shadow-lg shadow-primary/20" />
+          <div className="hidden md:block absolute left-[15px] lg:left-[calc(50%-2px)] top-0 bottom-0 w-1 bg-primary/40 shadow-lg shadow-primary/20 pointer-events-none" />
 
           <div className="space-y-8 md:space-y-12">
             {experiences.map((exp, index) => (

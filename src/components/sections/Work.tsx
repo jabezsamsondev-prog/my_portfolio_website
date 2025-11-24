@@ -105,8 +105,8 @@ export function Work() {
       </div>
 
       {/* Gradient orbs */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full filter blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/10 rounded-full filter blur-3xl" />
+      <div className="absolute top-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full filter blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/10 rounded-full filter blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-12 text-center md:text-left">

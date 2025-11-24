@@ -9,7 +9,7 @@ export function Inspiration() {
       className="relative bg-gradient-to-b from-primary/5 via-accent/5 to-background overflow-hidden"
     >
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div
           className="absolute top-0 left-0 w-full h-full"
           style={{
@@ -20,8 +20,8 @@ export function Inspiration() {
       </div>
 
       {/* Gradient orbs */}
-      <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-primary/20 rounded-full filter blur-3xl animate-blob" />
-      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-accent/20 rounded-full filter blur-3xl animate-blob animation-delay-2000" />
+      <div className="absolute top-10 left-10 w-[500px] h-[500px] bg-primary/20 rounded-full filter blur-3xl animate-blob pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-accent/20 rounded-full filter blur-3xl animate-blob animation-delay-2000 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.div

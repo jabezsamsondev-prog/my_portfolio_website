@@ -60,7 +60,7 @@ export function Highlights() {
       className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-primary/5 via-accent/5 to-background"
     >
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div
           className="absolute top-0 left-0 w-full h-full"
           style={{
@@ -71,8 +71,8 @@ export function Highlights() {
       </div>
 
       {/* Gradient orbs for depth */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full filter blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full filter blur-3xl" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full filter blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full filter blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">

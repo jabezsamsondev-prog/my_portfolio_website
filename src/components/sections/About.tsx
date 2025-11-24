@@ -43,7 +43,7 @@ export function About() {
                 my north star — the force that guided me from experimenting with
                 simple interfaces to architecting dynamic, user-focused web
                 solutions. It’s that feeling that drives me when you can bring
-                something imaginary to life. For over 8+ years, that same
+                something imaginary to life. For over 8+ years as a self-taught professional, that same
                 curiosity has evolved into a pursuit of mastery — shaping me
                 into a Front-End Software Developer who blends problem-solving,
                 critical thinking, design ideology, and engineering precision to

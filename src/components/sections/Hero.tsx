@@ -21,7 +21,7 @@ export function Hero() {
     <section
       id="hero"
       className="h-screen relative overflow-hidden bg-background pt-16 sm:pt-20 md:pt-24 lg:pt-20 flex flex-col"
-      style={{ height: '100vh', minHeight: '-webkit-fill-available' }}
+      style={{ height: "100vh", minHeight: "-webkit-fill-available" }}
     >
       {/* Animated Background with moving gradients */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -150,13 +150,13 @@ export function Hero() {
         </motion.div>
 
         {/* Animated gradient blobs */}
-        <div className="absolute top-20 left-10 w-[300px] h-[300px] bg-primary/50 rounded-full filter blur-3xl animate-blob" />
-        <div className="absolute top-40 right-10 w-[300px] h-[300px] bg-accent/50 rounded-full filter blur-3xl animate-blob animation-delay-2000" />
-        <div className="absolute bottom-20 left-1/3 w-[300px] h-[300px] bg-purple-500/50 rounded-full filter blur-3xl animate-blob animation-delay-4000" />
+        <div className="absolute top-20 left-10 w-[300px] h-[300px] bg-primary/50 rounded-full filter blur-3xl animate-blob pointer-events-none" />
+        <div className="absolute top-40 right-10 w-[300px] h-[300px] bg-accent/50 rounded-full filter blur-3xl animate-blob animation-delay-2000 pointer-events-none" />
+        <div className="absolute bottom-20 left-1/3 w-[300px] h-[300px] bg-purple-500/50 rounded-full filter blur-3xl animate-blob animation-delay-4000 pointer-events-none" />
 
         {/* Moving gradient overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 animate-gradient"
+          className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 animate-gradient pointer-events-none"
           style={{ backgroundSize: "400% 400%" }}
         />
       </div>
@@ -167,13 +167,11 @@ export function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="hidden lg:block absolute bottom-0 right-0 w-1/2 pointer-events-none"
-        style={{ height: 'calc(100vh - 80px)' }}
+        style={{ height: "calc(100vh - 80px)" }}
       >
         <div className="relative h-full flex items-end justify-center w-full">
           {/* Subtle circular gradient glow */}
-          <div
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[450px] h-[450px] rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-purple-500/30 blur-3xl opacity-70"
-          />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[450px] h-[450px] rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-purple-500/30 blur-3xl opacity-70" />
 
           {/* Profile image */}
           <img
@@ -200,7 +198,7 @@ export function Hero() {
             >
               <motion.h2
                 className="font-bold mb-4 text-sm sm:text-base md:text-base lg:text-lg uppercase bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent animate-gradient drop-shadow-[0_2px_8px_rgba(168,85,247,0.8)]"
-                style={{ 
+                style={{
                   letterSpacing: "0.07em",
                   backgroundSize: "200% auto",
                 }}
@@ -219,8 +217,9 @@ export function Hero() {
                 </span>
               </h1>
               <p className="text-dark text-xs sm:text-sm md:text-sm lg:text-sm mb-8 max-w-md leading-loose mx-auto lg:mx-0">
-                Crafting modern, intuitive, and visually striking web
-                experiences that are fast, responsive, and reliable - built with
+                A self-taught professional with 8+ years of experience crafting
+                modern, intuitive, and visually striking web experiences and
+                ecosystems that are fast, responsive, and reliable — built with
                 purpose to solve real-world problems.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -275,13 +274,11 @@ export function Hero() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="lg:hidden relative w-full self-end min-h-0 mt-auto"
-              style={{ marginBottom: '-1px' }}
+              style={{ marginBottom: "-1px" }}
             >
               <div className="relative w-full max-w-[300px] sm:max-w-[260px] md:max-w-[300px] mx-auto">
                 {/* Subtle circular gradient glow */}
-                <div
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-purple-500/30 blur-3xl opacity-70"
-                />
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-purple-500/30 blur-3xl opacity-70" />
 
                 {/* Profile image container */}
                 <div className="relative w-full">
@@ -292,7 +289,7 @@ export function Hero() {
                     className="relative w-full h-auto object-contain object-bottom block"
                     style={{
                       filter: "drop-shadow(0 15px 50px rgba(0,0,0,0.9))",
-                      maxHeight: "42vh"
+                      maxHeight: "42vh",
                     }}
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}

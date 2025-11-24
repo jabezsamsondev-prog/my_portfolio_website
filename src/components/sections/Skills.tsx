@@ -83,7 +83,7 @@ export function Skills() {
       className="relative bg-gradient-to-b from-primary/5 via-accent/5 to-background overflow-hidden"
     >
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div
           className="absolute top-0 left-0 w-full h-full"
           style={{
@@ -94,8 +94,8 @@ export function Skills() {
       </div>
 
       {/* Subtle gradient orbs */}
-      <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-primary/10 rounded-full filter blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-[400px] h-[400px] bg-accent/10 rounded-full filter blur-3xl" />
+      <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-primary/10 rounded-full filter blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 left-10 w-[400px] h-[400px] bg-accent/10 rounded-full filter blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div

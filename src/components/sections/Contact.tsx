@@ -228,8 +228,8 @@ export function Contact() {
       </div>
 
       {/* Gradient Orbs */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full filter blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full filter blur-3xl" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full filter blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full filter blur-3xl pointer-events-none" />
 
       {/* Toast Notifications */}
       <AnimatePresence>
