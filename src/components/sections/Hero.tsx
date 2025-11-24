@@ -149,7 +149,7 @@ export function Hero() {
           <SiGithub className="w-18 h-18 md:w-20 md:h-20 text-white" />
         </motion.div>
 
-        {/* Animated gradient blobs - much more visible */}
+        {/* Animated gradient blobs */}
         <div className="absolute top-20 left-10 w-[300px] h-[300px] bg-primary/50 rounded-full filter blur-3xl animate-blob" />
         <div className="absolute top-40 right-10 w-[300px] h-[300px] bg-accent/50 rounded-full filter blur-3xl animate-blob animation-delay-2000" />
         <div className="absolute bottom-20 left-1/3 w-[300px] h-[300px] bg-purple-500/50 rounded-full filter blur-3xl animate-blob animation-delay-4000" />
@@ -161,7 +161,7 @@ export function Hero() {
         />
       </div>
 
-      {/* Photo - absolutely positioned at bottom right of section */}
+      {/* Photo */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -177,7 +177,7 @@ export function Hero() {
 
           {/* Profile image */}
           <img
-            src="/images/profile1.png"
+            src="/images/profile.png"
             alt="Jabez Samson - Profile"
             className="block h-full w-auto object-contain object-bottom pointer-events-auto"
             style={{
@@ -218,7 +218,7 @@ export function Hero() {
                   Developer
                 </span>
               </h1>
-              <p className="text-dark text-xs sm:text-sm md:text-sm lg:text-sm mb-8 max-w-md leading-relaxed mx-auto lg:mx-0">
+              <p className="text-dark text-xs sm:text-sm md:text-sm lg:text-sm mb-8 max-w-md leading-loose mx-auto lg:mx-0">
                 Crafting modern, intuitive, and visually striking web
                 experiences that are fast, responsive, and reliable - built with
                 purpose to solve real-world problems.
@@ -277,7 +277,7 @@ export function Hero() {
               className="lg:hidden relative w-full self-end min-h-0 mt-auto"
               style={{ marginBottom: '-1px' }}
             >
-              <div className="relative w-full max-w-[220px] sm:max-w-[260px] md:max-w-[300px] mx-auto">
+              <div className="relative w-full max-w-[300px] sm:max-w-[260px] md:max-w-[300px] mx-auto">
                 {/* Subtle circular gradient glow */}
                 <div
                   className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-purple-500/30 blur-3xl opacity-70"
@@ -287,7 +287,7 @@ export function Hero() {
                 <div className="relative w-full">
                   {/* Profile image */}
                   <motion.img
-                    src="/images/profile1.png"
+                    src="/images/profile.png"
                     alt="Jabez Samson - Profile"
                     className="relative w-full h-auto object-contain object-bottom block"
                     style={{

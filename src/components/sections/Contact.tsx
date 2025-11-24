@@ -3,6 +3,7 @@ import { Section } from "../ui/Section";
 import { Card, CardContent } from "../ui/Card";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
 import {
   Mail,
   MapPin,
@@ -130,6 +131,7 @@ export function Contact() {
       // Replace with your Google Apps Script Web App URL
       const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwmPa8VGmMijrGThURZSsaX3v1n5it8KCzS196wmzMclXUuQFxc1MduzVs9H8euPCEXmQ/exec';
       
+      // Submit to Google Sheets
       await fetch(SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -137,6 +139,18 @@ export function Contact() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(trimmedData)
+      });
+
+      // Send email via EmailJS
+      const templateParams = {
+        name: trimmedData.name,
+        email: trimmedData.email,
+        subject: trimmedData.subject,
+        message: trimmedData.message,
+      };
+
+      await emailjs.send('service_jx9z9ep', 'template_bfalfbd', templateParams, {
+        publicKey: '0TbrdS_cVPnF1nfV0',
       });
 
       // Reset form
