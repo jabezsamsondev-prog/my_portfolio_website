@@ -117,7 +117,7 @@ export function Header() {
                 onClick={() => scrollToSection("work")}
                 className="relative text-foreground hover:text-foreground transition-colors cursor-pointer group text-xs xl:text-sm"
               >
-                My Work
+                Projects
                 <span
                   className={`absolute -bottom-[3px] left-0 h-0.5 bg-white transition-all duration-300 ease-out ${
                     activeSection === "work"
@@ -244,7 +244,7 @@ export function Header() {
                   onClick={() => scrollToSection("about")}
                   className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
                 >
-                  About
+                  My Story
                 </button>
                 <div className="pt-2 border-t border-border/30 flex flex-col gap-3">
                   <Button
