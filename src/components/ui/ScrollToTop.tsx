@@ -49,7 +49,7 @@ export function ScrollToTop() {
                 cx="22"
                 cy="22"
                 r={radius}
-                stroke="#ffffff"
+                stroke="#eee"
                 strokeWidth="4"
                 fill="none"
                 opacity="0.15"
@@ -59,7 +59,7 @@ export function ScrollToTop() {
                 cx="22"
                 cy="22"
                 r={radius}
-                stroke="#ffffff"
+                stroke="#eee"
                 strokeWidth="4"
                 fill="none"
                 strokeDasharray={circumference}

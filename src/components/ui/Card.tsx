@@ -6,10 +6,10 @@ const Card = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
   ({ className, ...props }, ref) => (
     <motion.div
       whileHover={{ y: -5 }}
-      transition={{ type: "spring", stiffness: 300 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
       ref={ref}
       className={cn(
-        "rounded-xl border border-border bg-card text-card-foreground shadow-sm hover:shadow-md hover:border-primary/50 transition-all duration-300 cursor-pointer",
+        "rounded-xl border border-border bg-card text-card-foreground shadow-sm hover:shadow-md hover:border-primary/50 transition-[box-shadow,border-color] duration-200",
         className
       )}
       {...props}

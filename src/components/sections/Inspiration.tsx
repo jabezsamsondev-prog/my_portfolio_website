@@ -54,30 +54,34 @@ export function Inspiration() {
           </h2>
 
           {/* Content */}
-          <div className="space-y-6 text-sm md:text-sm leading-relaxed text-foreground/90">
+          <div className="space-y-6 text-sm md:text-sm leading-loose text-foreground/90">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Eminem's music has shaped the way I work more than anything else.
-              His honesty, discipline, and "get up no matter what" energy taught
-              me how to push through tough days and show up even when it isn't
-              easy. Songs like{" "}
+              <span className="text-primary font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent px-1">
+                Eminem's
+              </span>{" "}
+              music has shaped the way I work more than anything else. His
+              honesty, discipline and "get up no matter what" attitude taught me
+              to push through tough days and show up even when it isn't easy.
+              Songs like{" "}
               <span className="text-primary font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent px-1">
                 Beautiful Pain
               </span>
-              ,{" "}
+              ,
               <span className="text-primary font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent px-1">
                 Survival
               </span>
-              , and{" "}
+              and{" "}
               <span className="text-primary font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent px-1">
                 Lighters
-              </span>{" "}
-              remind me to stay hungry, stay grounded, and keep fighting for
-              better — one line of code at a time.
+              </span>
+              remind me to stay hungry, stay grounded and keep fighting despite
+              hardships — becoming better than yesterday, one line of code at a
+              time.
             </motion.p>
 
             <motion.p
@@ -85,7 +89,11 @@ export function Inspiration() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="italic"
+              className="font-serif italic"
+              style={{
+                fontFamily: "'Georgia', 'Merriweather', serif",
+                fontSize: "1rem",
+              }}
             >
               I'm not the best, but I'm someone who keeps going, keeps learning,
               and keeps improving — because that's the mindset his music built

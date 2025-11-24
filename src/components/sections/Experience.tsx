@@ -15,7 +15,7 @@ const experiences = [
     company: "Devship Pvt. Ltd.",
     role: "Senior Software Developer",
     period: "2021 - Present",
-    description: `Led front-end development for a comprehensive CRM system, building an intuitive admin dashboard and client-facing features including training modules and e-commerce capabilities. Collaborated with cross-functional teams to define project requirements, manage timelines, and ensure the delivery of high-quality, scalable code. Built few other full-fledged web applications involving features like Inventory Management, E-Commerce and Financial Review.`,
+    description: `Led front-end development for a comprehensive CRM system, building an intuitive admin dashboard and client-facing features including training modules and e-commerce capabilities. Collaborated with cross-functional teams to define project requirements, manage timelines and ensure the delivery of high-quality, scalable code. Built few other full-fledged web applications involving features like Inventory Management, E-Commerce and Financial Review.`,
     skills: [
       "JavaScript",
       "React",
@@ -29,7 +29,7 @@ const experiences = [
     company: "Logistics Sector Skill Council",
     role: "Web Developer",
     period: "2018 - 2021",
-    description: `Spearheaded end-to-end development and delivery of Learning Management Systems (LMSs), from requirement gathering to deployment and post-launch support. Curated and structured educational content to align with client requirements and user engagement goals. Collaborated directly with clients to analyze problems, propose solutions, and ensure satisfaction. Managed a cross-functional team, overseeing project timelines, task allocation, and quality assurance.`,
+    description: `Spearheaded end-to-end development and delivery of Learning Management Systems (LMSs), from requirement gathering to deployment and post-launch support. Curated and structured educational content to align with client requirements and user engagement goals. Collaborated directly with clients to analyze problems, propose solutions and ensure satisfaction. Managed a cross-functional team, overseeing project timelines, task allocation and quality assurance.`,
     skills: [
       "LMS",
       "JavaScript",
@@ -107,7 +107,11 @@ export function Experience() {
                   <Briefcase className="w-4 h-4 text-primary-foreground" />
                 </motion.div>
 
-                <Card className="border-l-4 md:border-l-0 md:border-2 border-l-primary hover:border-primary ml-0 md:ml-12 lg:ml-0 transition-colors duration-200">
+                <Card className={`${
+                  index === 0 || index === 2
+                    ? "border-r-4 md:border-r-0 md:border-2 border-r-primary"
+                    : "border-l-4 md:border-l-0 md:border-2 border-l-primary"
+                } hover:border-primary ml-0 md:ml-12 lg:ml-0 transition-colors duration-200`}>
                   <CardHeader>
                     <div className="flex flex-row justify-between items-center gap-4 mb-1">
                       <CardTitle className="text-base md:text-lg flex-1">

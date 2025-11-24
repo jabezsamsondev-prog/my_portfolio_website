@@ -6,7 +6,6 @@ import { Work } from "./components/sections/Work";
 import { Highlights } from "./components/sections/Highlights";
 import { Inspiration } from "./components/sections/Inspiration";
 import { Contact } from "./components/sections/Contact";
-import { FloatingLinkedIn } from "./components/ui/FloatingLinkedIn";
 import { FloatingWhatsApp } from "./components/ui/FloatingWhatsApp";
 import { ScrollToTop } from "./components/ui/ScrollToTop";
 import { Header } from "./components/ui/Header";
@@ -26,14 +25,16 @@ function App() {
       <Inspiration />
       <Contact />
       <FloatingWhatsApp />
-      <FloatingLinkedIn />
       <ScrollToTop />
 
       {/* Footer */}
       <footer className="py-6 md:py-8 text-center text-dark border-t border-border/50 px-4">
         <p className="text-xs md:text-sm">
           Portfolio &copy; {new Date().getFullYear()} | All rights reserved.
-          Made with ❤️ and 🤖 by <a href="/" className="underline">Jabez Samson</a>.
+          Made with ❤️ and 💻 by{" "}
+          <a href="/" className="bg-primary px-2 py-1 rounded-sm ms-[5px]">
+            Jabez Samson
+          </a>
         </p>
       </footer>
     </main>

@@ -218,9 +218,9 @@ export function Hero() {
               </h1>
               <p className="text-dark text-xs sm:text-sm md:text-sm lg:text-sm mb-8 max-w-md leading-loose mx-auto lg:mx-0">
                 A self-taught professional with 8+ years of experience crafting
-                modern, intuitive, and visually striking web experiences and
-                ecosystems that are fast, responsive, and reliable — built with
-                purpose to solve real-world problems.
+                modern, intuitive and visually striking web experiences and
+                ecosystems that are fast, responsive and reliable — built with
+                purpose solving real-world problems.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button

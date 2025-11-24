@@ -154,7 +154,7 @@ The color scheme is defined in `src/index.css` using Tailwind v4's `@theme` dire
 Update the content in the following files:
 
 **Hero Section** (`src/components/sections/Hero.tsx`)
-- Update name, title, and description
+- Update name, title and description
 - Replace profile image
 
 **Experience** (`src/components/sections/Experience.tsx`)
