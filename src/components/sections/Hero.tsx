@@ -220,7 +220,7 @@ export function Hero() {
                 A self-taught professional with 8+ years of experience crafting
                 modern, intuitive and visually striking web experiences and
                 ecosystems that are fast, responsive and reliable — built with
-                purpose solving real-world problems.
+                purpose to solve real-world problems.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button

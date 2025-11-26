@@ -10,8 +10,13 @@ export function FloatingWhatsApp() {
   const phoneNumber = "+919710601958"; // Replace with your WhatsApp number (including country code, no + or spaces)
 
   const openWhatsApp = () => {
-    const encodedMessage = encodeURIComponent(message || "Hi! I found your portfolio and would like to connect.");
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+    const encodedMessage = encodeURIComponent(
+      message || "Hi! I found your portfolio and would like to connect."
+    );
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodedMessage}`,
+      "_blank"
+    );
     setIsOpen(false);
     setMessage("");
   };
@@ -65,7 +70,9 @@ export function FloatingWhatsApp() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">WhatsApp Chat</h3>
-                    <p className="text-xs text-muted-foreground">Start a conversation</p>
+                    <p className="text-xs text-muted-foreground">
+                      Start a conversation
+                    </p>
                   </div>
                 </div>
                 <button
@@ -79,7 +86,10 @@ export function FloatingWhatsApp() {
 
               {/* Message Input */}
               <div className="mb-4">
-                <label htmlFor="whatsapp-message" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="whatsapp-message"
+                  className="block text-sm font-medium mb-2"
+                >
                   Your Message (Optional)
                 </label>
                 <textarea
@@ -95,13 +105,13 @@ export function FloatingWhatsApp() {
               <div className="flex gap-3">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="flex-1 px-4 py-2 bg-secondary hover:bg-secondary/80 rounded-lg text-sm font-medium transition-colors"
+                  className="flex-1 px-4 py-2 bg-secondary hover:bg-secondary/80 rounded-lg text-sm font-medium transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={openWhatsApp}
-                  className="flex-1 px-4 py-2 bg-[#25D366] hover:bg-[#1ebe57] text-white rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2 bg-[#25D366] hover:bg-[#1ebe57] text-white rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <FaWhatsapp className="h-4 w-4" />
                   Send

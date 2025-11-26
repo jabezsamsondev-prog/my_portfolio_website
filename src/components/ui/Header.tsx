@@ -9,12 +9,13 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
-  
+
   const experienceRef = useRef<HTMLButtonElement>(null);
   const skillsRef = useRef<HTMLButtonElement>(null);
   const workRef = useRef<HTMLButtonElement>(null);
   const aboutRef = useRef<HTMLButtonElement>(null);
   const contactRef = useRef<HTMLButtonElement>(null);
+  const blogRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const updateIndicator = () => {
@@ -24,15 +25,16 @@ export function Header() {
       else if (activeSection === "work") ref = workRef;
       else if (activeSection === "about") ref = aboutRef;
       else if (activeSection === "contact") ref = contactRef;
-      
+      else if (activeSection === "blog") ref = blogRef;
+
       if (ref?.current) {
         setIndicatorStyle({
           left: ref.current.offsetLeft,
-          width: ref.current.offsetWidth
+          width: ref.current.offsetWidth,
         });
       }
     };
-    
+
     updateIndicator();
   }, [activeSection]);
 
@@ -47,6 +49,7 @@ export function Header() {
         "skills",
         "experience",
         "work",
+        "blog",
         "contact",
       ];
       const scrollPosition = window.scrollY + 100; // offset for better detection
@@ -115,58 +118,101 @@ export function Header() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-center gap-2 bg-secondary/30 backdrop-blur-sm rounded-full p-1 border border-primary/10 relative"
-                style={{ width: 'max-content' }}
+                style={{ width: "max-content" }}
               >
                 {/* Sliding background highlight */}
                 <motion.span
                   className="absolute bg-gradient-to-r from-primary to-accent rounded-full shadow-lg shadow-primary/50"
-                  style={{ height: 'calc(100% - 8px)', top: '4px' }}
+                  style={{ height: "calc(100% - 8px)", top: "4px" }}
                   animate={{
                     left: indicatorStyle.left,
                     width: indicatorStyle.width,
-                    opacity: activeSection === "hero" ? 0 : 1
+                    opacity: activeSection === "hero" ? 0 : 1,
                   }}
                   transition={{
                     type: "spring",
                     stiffness: 300,
-                    damping: 30
+                    damping: 30,
                   }}
                 />
-                
+
                 <button
                   ref={experienceRef}
                   onClick={() => scrollToSection("experience")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap"
+                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
                 >
-                  <span className={`font-medium transition-colors duration-300 ${activeSection === "experience" ? "text-white" : ""}`}>Experience</span>
+                  <span
+                    className={`font-medium transition-colors duration-300 ${
+                      activeSection === "experience" ? "text-white" : ""
+                    }`}
+                  >
+                    Experience
+                  </span>
                 </button>
                 <button
                   ref={skillsRef}
                   onClick={() => scrollToSection("skills")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap"
+                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
                 >
-                  <span className={`font-medium transition-colors duration-300 ${activeSection === "skills" ? "text-white" : ""}`}>Skills</span>
+                  <span
+                    className={`font-medium transition-colors duration-300 ${
+                      activeSection === "skills" ? "text-white" : ""
+                    }`}
+                  >
+                    Skills
+                  </span>
                 </button>
                 <button
                   ref={workRef}
                   onClick={() => scrollToSection("work")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap"
+                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
                 >
-                  <span className={`font-medium transition-colors duration-300 ${activeSection === "work" ? "text-white" : ""}`}>Projects</span>
+                  <span
+                    className={`font-medium transition-colors duration-300 ${
+                      activeSection === "work" ? "text-white" : ""
+                    }`}
+                  >
+                    Projects
+                  </span>
                 </button>
                 <button
                   ref={aboutRef}
                   onClick={() => scrollToSection("about")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap"
+                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
                 >
-                  <span className={`font-medium transition-colors duration-300 ${activeSection === "about" ? "text-white" : ""}`}>My Story</span>
+                  <span
+                    className={`font-medium transition-colors duration-300 ${
+                      activeSection === "about" ? "text-white" : ""
+                    }`}
+                  >
+                    My Story
+                  </span>
+                </button>
+                <button
+                  ref={blogRef}
+                  onClick={() => scrollToSection("blog")}
+                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
+                >
+                  <span
+                    className={`font-medium transition-colors duration-300 ${
+                      activeSection === "blog" ? "text-white" : ""
+                    }`}
+                  >
+                    Blog
+                  </span>
                 </button>
                 <button
                   ref={contactRef}
                   onClick={() => scrollToSection("contact")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap"
+                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
                 >
-                  <span className={`font-medium transition-colors duration-300 ${activeSection === "contact" ? "text-white" : ""}`}>Contact</span>
+                  <span
+                    className={`font-medium transition-colors duration-300 ${
+                      activeSection === "contact" ? "text-white" : ""
+                    }`}
+                  >
+                    Contact
+                  </span>
                 </button>
               </motion.div>
             </div>
@@ -180,13 +226,14 @@ export function Header() {
               <Button
                 variant="outline"
                 size="sm"
-                className="text-xs border-white/40 hover:border-white/80"
+                className="text-xs xl:text-sm border-white/40 hover:border-white/80"
                 asChild
               >
                 <a
                   href="/cv/Jabez_Samson_Resume.pdf"
                   download="Jabez_Samson_CV.pdf"
                   className="flex items-center gap-2"
+                  style={{ minHeight: "36px", maxHeight: "36px" }}
                 >
                   Download CV
                   <motion.div
@@ -207,6 +254,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#0A66C2] hover:bg-[#0A66C2] text-white px-3 py-1.5 xl:px-4 xl:py-2 rounded-md text-xs xl:text-sm font-medium flex items-center gap-2 border border-white/20 bg-gradient-to-r from-[#0A66C2] via-[#004182] to-[#0A66C2] hover:from-[#004182] hover:via-[#0A66C2] hover:to-[#004182] bg-[length:200%_100%] hover:bg-right-top transition-[background-position,box-shadow] duration-700 ease-out shadow-lg shadow-[#0A66C2]/30 hover:shadow-xl hover:shadow-[#0A66C2]/40"
+                style={{ minHeight: "36px", maxHeight: "36px" }}
               >
                 Connect
                 <motion.div
@@ -278,6 +326,12 @@ export function Header() {
                   My Story
                 </button>
                 <button
+                  onClick={() => scrollToSection("blog")}
+                  className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
+                >
+                  Blog
+                </button>
+                <button
                   onClick={() => scrollToSection("contact")}
                   className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
                 >
@@ -288,6 +342,7 @@ export function Header() {
                     href="/cv/Jabez_Samson_Resume.pdf"
                     download="Jabez_Samson_CV.pdf"
                     className="flex items-center justify-center gap-2 px-4 py-2 bg-transparent border-2 border-white/40 hover:border-primary hover:bg-primary/10 rounded-md transition-colors text-sm"
+                    style={{ minHeight: "30px", maxHeight: "30px" }}
                   >
                     <Download className="h-4 w-4" />
                     Download CV
@@ -297,6 +352,7 @@ export function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 px-4 py-2 bg-[#0A66C2] hover:bg-[#004182] text-white rounded-md transition-colors text-sm"
+                    style={{ minHeight: "30px", maxHeight: "30px" }}
                   >
                     <FaLinkedin className="h-4 w-4" />
                     Connect
@@ -310,3 +366,12 @@ export function Header() {
     </header>
   );
 }
+
+// Add this to your tailwind.config.js:
+// theme: {
+//   extend: {
+//     screens: {
+//       nesthub: '1024px',
+//     },
+//   },
+// },

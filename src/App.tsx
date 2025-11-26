@@ -10,6 +10,7 @@ import { FloatingWhatsApp } from "./components/ui/FloatingWhatsApp";
 import { ScrollToTop } from "./components/ui/ScrollToTop";
 import { Header } from "./components/ui/Header";
 import { CustomCursor } from "./components/ui/CustomCursor";
+import { BlogSection } from "./components/sections/Blog";
 
 function App() {
   return (
@@ -23,13 +24,14 @@ function App() {
       <Highlights />
       <About />
       <Inspiration />
+      <BlogSection />
       <Contact />
       <FloatingWhatsApp />
       <ScrollToTop />
 
       {/* Footer */}
       <footer className="py-6 md:py-8 text-center text-dark border-t border-border/50 px-4">
-        <p className="text-xs md:text-sm">
+        <p className="text-xs md:text-sm leading-loose">
           Portfolio &copy; {new Date().getFullYear()} | All rights reserved.
           Made with ❤️ and 💻 by{" "}
           <a href="/" className="bg-primary px-2 py-1 rounded-sm ms-[5px]">
