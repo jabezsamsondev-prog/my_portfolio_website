@@ -229,6 +229,7 @@ This site can be deployed to:
 - **Vercel**: \`vercel\`
 - **Netlify**: \`netlify deploy\`
 - **GitHub Pages**: Configure GitHub Actions
+- **Firebase Hosting**: Use Firebase CLI
 - **Any static host**: Upload the \`dist\` folder after running \`npm run build\`
 
 ## 📄 License
