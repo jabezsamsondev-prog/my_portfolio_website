@@ -37,16 +37,16 @@ const blogPosts = [
     image: "/images/blogs/post_4.png",
     title: "Building My Portfolio with TypeScript: A Journey of Learning with AI",
     description:
-      "My Journey of learning and building my new and refined portfolio website using React/Vite and TypeScript. This describes my start-to-end journey of building and learning with AI.",
+      "My Journey of building my new and refined portfolio website using React/Vite and TypeScript. This article walks you through the process of developing and learning with AI.",
     blogURL:
-      "https://www.linkedin.com/pulse/why-every-developer-should-build-portfolio-early-jabez-samson-ag4mc",
+      "https://www.linkedin.com/pulse/building-my-portfolio-typescript-journey-learning-ai-jabez-samson-ms7cc",
   },
 ];
 
 export function BlogSection() {
   const swiperRef = useRef(null);
   const firstCardRef = useRef<HTMLDivElement>(null);
-  const [cardHeight, setCardHeight] = useState(undefined);
+  const [cardHeight, setCardHeight] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     if (firstCardRef.current) {
