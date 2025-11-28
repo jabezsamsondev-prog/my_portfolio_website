@@ -7,7 +7,7 @@ export function About() {
       className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24"
     >
       {/* Animated Wave Background */}
-      <div className="absolute inset-0 pointer-events-none z-0">
+      <div className="absolute inset-0 pointer-events-none z-0 hidden sm:block">
         {/* Multiple layered waves with different speeds */}
         <svg
           className="absolute bottom-0 w-full h-full opacity-30"

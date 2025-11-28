@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import 'swiper/swiper-bundle.css';
 
 const blogPosts = [
@@ -32,10 +32,27 @@ const blogPosts = [
     blogURL:
       "https://www.linkedin.com/pulse/why-every-developer-should-build-portfolio-early-jabez-samson-ag4mc",
   },
+  {
+    id: 4,
+    image: "/images/blogs/post_4.png",
+    title: "Building My Portfolio with TypeScript: A Journey of Learning with AI",
+    description:
+      "My Journey of learning and building my new and refined portfolio website using React/Vite and TypeScript. This describes my start-to-end journey of building and learning with AI.",
+    blogURL:
+      "https://www.linkedin.com/pulse/why-every-developer-should-build-portfolio-early-jabez-samson-ag4mc",
+  },
 ];
 
 export function BlogSection() {
   const swiperRef = useRef(null);
+  const firstCardRef = useRef<HTMLDivElement>(null);
+  const [cardHeight, setCardHeight] = useState(undefined);
+
+  useEffect(() => {
+    if (firstCardRef.current) {
+      setCardHeight(firstCardRef.current.offsetHeight);
+    }
+  }, []);
 
   return (
     <section
@@ -53,73 +70,97 @@ export function BlogSection() {
         </motion.h2>
         <div className="h-1 w-20 bg-accent rounded-full mx-auto mb-10" />
         <div className="relative w-full flex justify-center items-center">
-          <Swiper
-            modules={[Navigation]}
-            navigation={blogPosts.length > 3}
-            slidesPerView={1}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            spaceBetween={24}
-            className="w-full sm:w-[80%] mx-auto"
-            ref={swiperRef}
-          >
-            {blogPosts.map((post) => (
-              <SwiperSlide key={post.id}>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  className="group bg-card/60 border border-primary/20 rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:border-primary/40 transition-all duration-300 relative min-h-[300px]"
-                >
-                  <div className="w-full aspect-rectangle overflow-hidden relative">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
-                      <a
-                        href={post.blogURL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-auto"
-                        style={{ zIndex: 11 }}
-                      >
-                        <button className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-primary via-accent to-purple-500 text-white font-semibold shadow-lg hover:scale-105 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-primary/40 cursor-pointer">
-                          Read article
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                            className="w-5 h-5"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M18 13V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6m0 0v6m0-6L10 14"
-                            />
-                          </svg>
-                        </button>
-                      </a>
+          <div className="w-full sm:w-[80%] mx-auto relative flex min-h-[1px]">
+            <Swiper
+              modules={[Navigation]}
+              navigation={blogPosts.length > 3 ? {
+                nextEl: '.blog-swiper-next',
+                prevEl: '.blog-swiper-prev',
+              } : false}
+              slidesPerView={1}
+              breakpoints={{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+              spaceBetween={24}
+              className="w-full h-full"
+              ref={swiperRef}
+            >
+              {blogPosts.map((post, idx) => (
+                <SwiperSlide key={post.id} className="flex" style={cardHeight ? { height: cardHeight } : {}}>
+                  <motion.div
+                    ref={idx === 0 ? firstCardRef : undefined}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="group bg-card/60 border border-primary/20 rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:border-primary/40 transition-all duration-300 relative h-full w-full"
+                  >
+                    <div className="w-full aspect-[16/9] overflow-hidden relative">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+                        <a
+                          href={post.blogURL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-auto"
+                          style={{ zIndex: 11 }}
+                        >
+                          <button className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-primary via-accent to-purple-500 text-white font-semibold shadow-lg hover:scale-105 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-primary/40 cursor-pointer">
+                            Read article
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              strokeWidth={2}
+                              className="w-5 h-5"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M18 13V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6m0 0v6m0-6L10 14"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-6 w-full flex-1 flex flex-col justify-between">
-                    <h3 className="font-bold text-md md:text-lg mb-2 bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">
-                      {post.title}
-                    </h3>
-                    <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
-                      {post.description}
-                    </p>
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                    <div className="p-6 w-full flex-1 flex flex-col">
+                      <h3 className="font-bold text-md md:text-lg mb-2 bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">
+                        {post.title}
+                      </h3>
+                      <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
+                        {post.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          {blogPosts.length > 3 && (
+            <>
+              <button
+                className="blog-swiper-prev absolute -left-8 top-1/2 -translate-y-1/2 sm:-translate-y-1/2 -translate-y-8 z-30 bg-gradient-to-br from-primary to-accent text-white rounded-full p-2 sm:p-3 shadow-lg hover:scale-110 transition-all duration-200 cursor-pointer"
+                aria-label="Previous"
+                style={{ left: 'calc(10% - 2rem)' }}
+              >
+                <svg className="w-5 h-5 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 19l-7-7 7-7" /></svg>
+              </button>
+              <button
+                className="blog-swiper-next absolute -right-8 top-1/2 -translate-y-1/2 sm:-translate-y-1/2 -translate-y-8 z-30 bg-gradient-to-br from-primary to-accent text-white rounded-full p-2 sm:p-3 shadow-lg hover:scale-110 transition-all duration-200 cursor-pointer"
+                aria-label="Next"
+                style={{ right: 'calc(10% - 2rem)' }}
+              >
+                <svg className="w-5 h-5 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 5l7 7-7 7" /></svg>
+              </button>
+            </>
+          )}
         </div>
       </div>
       {/* Gradient highlight orb */}
