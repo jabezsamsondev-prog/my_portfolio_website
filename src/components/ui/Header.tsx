@@ -1,6 +1,6 @@
 import { Button } from "./Button";
 import { motion } from "framer-motion";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, Download } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa6";
 import { useState, useEffect, useRef } from "react";
 import { SidebarMenu } from "./SidebarMenu";
