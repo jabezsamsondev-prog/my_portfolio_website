@@ -207,8 +207,8 @@ export function Hero() {
               >
                 HELLO, I'M JABEZ SAMSON
               </motion.h2>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-6 leading-tight text-foreground drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                Frontend <br />
+              <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-6xl font-extrabold mb-3 leading-tight text-foreground drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+                Frontend{" "}
                 <span
                   className="bg-gradient-to-r from-primary via-purple-500 to-accent bg-clip-text text-transparent font-extrabold animate-gradient filter drop-shadow-[0_0_30px_rgba(99,102,241,0.5)]"
                   style={{ backgroundSize: "200% auto" }}
@@ -216,7 +216,15 @@ export function Hero() {
                   Developer
                 </span>
               </h1>
-              <p className="text-dark text-xs sm:text-sm md:text-sm lg:text-sm mb-8 max-w-md leading-loose mx-auto lg:mx-0">
+              <div className="flex gap-3 my-5 justify-center items-center lg:justify-start">
+                <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black font-semibold shadow-md text-sm tracking-wide">
+                  JavaScript
+                </span>
+                <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white font-semibold shadow-md text-sm tracking-wide">
+                  React
+                </span>
+              </div>
+              <p className="text-dark text-xs sm:text-sm md:text-sm lg:text-sm mb-8 max-w-lg leading-loose mx-auto lg:mx-0">
                 A self-taught professional with 8+ years of experience crafting
                 modern, intuitive and visually striking web experiences and
                 ecosystems that are fast, responsive and reliable — built with

@@ -67,7 +67,7 @@ export function Experience() {
         {/* Timeline for desktop, stacked cards for mobile */}
         <div className="relative">
           {/* Timeline line - hidden on mobile, visible on md+ */}
-          <div className="hidden md:block absolute left-[15px] lg:left-[calc(50%-2px)] top-0 bottom-0 w-1 bg-primary/40 shadow-lg shadow-primary/20 pointer-events-none" />
+          <div className="hidden md:block absolute left-[15px] lg:left-[calc(50%-2px)] top-0 bottom-0 w-1 bg-white/10 shadow-lg shadow-primary/20 pointer-events-none" />
 
           <div className="space-y-8 md:space-y-12">
             {experiences.map((exp, index) => (
@@ -114,19 +114,19 @@ export function Experience() {
                 } hover:border-primary ml-0 md:ml-12 lg:ml-0 transition-colors duration-200`}>
                   <CardHeader>
                     <div className="flex flex-row justify-between items-center gap-4 mb-1">
-                      <CardTitle className="text-base md:text-lg flex-1">
+                      <CardTitle className="text-base md:text-lg flex-1 primary">
                         {exp.role}
                       </CardTitle>
                       <Badge variant="secondary" className="flex-shrink-0">
                         {exp.period}
                       </Badge>
                     </div>
-                    <CardDescription className="text-sm md:text-sm font-medium">
+                    <CardDescription className="text-sm text-white/50 md:text-sm font-medium">
                       {exp.company}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground mb-4 text-xs md:text-sm leading-loose">
+                    <p className="text-white/90 mb-4 text-xs md:text-sm leading-loose">
                       {exp.description}
                     </p>
                     <div className="flex gap-2 flex-wrap">

@@ -25,16 +25,7 @@ export function Skills() {
     {
       title: "Backend",
       icon: Database,
-      skills: [
-        "NodeJS",
-        "ExpressJS",
-        "MongoDB",
-        "Firebase",
-        "Supabase",
-        "REST APIs",
-        "Vercel",
-        "Render",
-      ],
+      skills: ["NodeJS", "ExpressJS", "MongoDB", "Firebase", "REST APIs"],
     },
     {
       title: "Technical Skills",

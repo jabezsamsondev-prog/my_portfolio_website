@@ -6,7 +6,7 @@ export function Highlights() {
   const highlights = [
     {
       icon: Briefcase,
-      value: "Tech Mentor",
+      value: "Ex-Tech Mentor",
       label: "Rethink Passion",
       description: "Guided aspiring developers in their learning journey",
       color: "from-primary/20 to-accent/20",
@@ -14,7 +14,7 @@ export function Highlights() {
     },
     {
       icon: Award,
-      value: "Intern",
+      value: "Ex-Intern",
       label: "Google Device Lab",
       description: "A hands-on workshop exploring Entrepreneurship",
       color: "from-accent/20 to-purple-500/20",
@@ -22,8 +22,8 @@ export function Highlights() {
     },
     {
       icon: SiQuora,
-      value: "644K+",
-      label: "Answer Views",
+      value: "6,45,000+",
+      label: "Content Views",
       platform: "My answers on Quora have gotten attention",
       color: "from-red-500/20 to-orange-500/20",
       iconColor: "text-red-400",
@@ -238,48 +238,54 @@ export function Highlights() {
                 <p className="text-xs text-muted-foreground/80">
                   {highlights[1].description}
                 </p>
-              </div>  
+              </div>
             </motion.div>
 
             {/* Quora Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="group relative overflow-hidden rounded-2xl border border-primary/10 bg-secondary/30 backdrop-blur-sm p-6 hover:border-primary/30 transition-all duration-300 md:col-span-2 lg:col-span-2"
+            <a
+              href="https://www.quora.com/profile/Jabez-Samson"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-2xl border border-primary/10 bg-secondary/30 backdrop-blur-sm p-6 hover:border-primary/30 transition-all duration-300 md:col-span-2 lg:col-span-2 cursor-pointer"
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${highlights[2].color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-              />
-              <div className="relative z-10 flex flex-col justify-between">
-                <motion.div
-                  className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${highlights[2].color} mb-4`}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  {(() => {
-                    const Icon = highlights[2].icon;
-                    return (
-                      <Icon
-                        className={`w-8 h-8 ${highlights[2].iconColor}`}
-                      />
-                    );
-                  })()}
-                </motion.div>
-                <div>
-                  <div className="text-xl md:text-2xl font-bold mb-3 bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">
-                    {highlights[2].value}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${highlights[2].color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                />
+                <div className="relative z-10 flex flex-col justify-between">
+                  <motion.div
+                    className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${highlights[2].color} mb-4`}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    {(() => {
+                      const Icon = highlights[2].icon;
+                      return (
+                        <Icon
+                          className={`w-8 h-8 ${highlights[2].iconColor}`}
+                        />
+                      );
+                    })()}
+                  </motion.div>
+                  <div>
+                    <div className="text-xl md:text-2xl font-bold mb-3 bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">
+                      {highlights[2].value}
+                    </div>
+                    <p className="text-sm md:text-md font-semibold text-foreground/90 mb-2">
+                      {highlights[2].label}
+                    </p>
+                    <p className="text-xs text-muted-foreground/80">
+                      {highlights[2].platform}
+                    </p>
                   </div>
-                  <p className="text-sm md:text-md font-semibold text-foreground/90 mb-2">
-                    {highlights[2].label}
-                  </p>
-                  <p className="text-xs text-muted-foreground/80">
-                    {highlights[2].platform}
-                  </p>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </a>
           </div>
         </div>
       </div>

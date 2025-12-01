@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa6";
 import { useState, useEffect, useRef } from "react";
+import { SidebarMenu } from "./SidebarMenu";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -275,92 +276,19 @@ export function Header() {
             <motion.button
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => setIsMenuOpen(true)}
               className="lg:hidden text-foreground p-2 cursor-pointer"
             >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              <Menu className="h-6 w-6" />
             </motion.button>
           </div>
 
           {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden py-6 px-4 border-t border-border/50 bg-background backdrop-blur-md rounded-lg"
-            >
-              <div className="flex flex-col gap-4">
-                <button
-                  onClick={() => scrollToSection("hero")}
-                  className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
-                >
-                  Home
-                </button>
-                <button
-                  onClick={() => scrollToSection("experience")}
-                  className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
-                >
-                  Experience
-                </button>
-                <button
-                  onClick={() => scrollToSection("skills")}
-                  className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
-                >
-                  Skills
-                </button>
-                <button
-                  onClick={() => scrollToSection("work")}
-                  className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
-                >
-                  Projects
-                </button>
-                <button
-                  onClick={() => scrollToSection("about")}
-                  className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
-                >
-                  My Story
-                </button>
-                <button
-                  onClick={() => scrollToSection("blog")}
-                  className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
-                >
-                  Blog
-                </button>
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
-                >
-                  Contact
-                </button>
-                <div className="pt-2 border-t border-border/30 flex flex-col gap-3">
-                  <a
-                    href="/cv/Jabez_Samson_Resume.pdf"
-                    download="Jabez_Samson_CV.pdf"
-                    className="flex items-center justify-center gap-2 px-4 py-2 bg-transparent border-2 border-white/40 hover:border-primary hover:bg-primary/10 rounded-md transition-colors text-sm"
-                    style={{ minHeight: "30px", maxHeight: "30px" }}
-                  >
-                    <Download className="h-4 w-4" />
-                    Download CV
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/jabezsamson/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-4 py-2 bg-[#0A66C2] hover:bg-[#004182] text-white rounded-md transition-colors text-sm"
-                    style={{ minHeight: "30px", maxHeight: "30px" }}
-                  >
-                    <FaLinkedin className="h-4 w-4" />
-                    Connect
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          )}
+          <SidebarMenu
+            isOpen={isMenuOpen}
+            onClose={() => setIsMenuOpen(false)}
+            scrollToSection={scrollToSection}
+          />
         </div>
       </nav>
     </header>
@@ -374,4 +302,4 @@ export function Header() {
 //       nesthub: '1024px',
 //     },
 //   },
-// },
+// }

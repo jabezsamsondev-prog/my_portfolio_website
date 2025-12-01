@@ -18,8 +18,7 @@ const projects = [
     title: "Ball Chase Challenge",
     description:
       "An interactive JavaScript game where players control a ball to chase targets while avoiding obstacles. Features smooth animations and score tracking.",
-    image:
-      "data:image/svg+xml,%3Csvg width='800' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236366f1;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a855f7;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23bg)'/%3E%3Ccircle cx='400' cy='300' r='80' fill='%23fbbf24' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M 200 500 Q 400 450 600 500' stroke='%23fff' stroke-width='3' fill='none'/%3E%3Ctext x='400' y='100' font-family='Arial' font-size='48' font-weight='bold' fill='%23fff' text-anchor='middle'%3EBall Chase%3C/text%3E%3C/svg%3E",
+    image: "../images/projects/proj_1.png",
     tags: ["JavaScript", "Canvas API", "Game Logic"],
     github: "https://github.com/jabezsamsondev-prog/ball_chase_challenge.git",
     demo: "https://ball-chase-188ee.firebaseapp.com/",
@@ -29,8 +28,7 @@ const projects = [
     title: "Whac-a-Mole",
     description:
       "Classic arcade-style game built with vanilla JavaScript. Test your reflexes by clicking moles as they randomly appear. Includes difficulty levels and high score system.",
-    image:
-      "data:image/svg+xml,%3Csvg width='800' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='bg2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2310b981;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%2306b6d4;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23bg2)'/%3E%3Cellipse cx='250' cy='450' rx='80' ry='40' fill='%238b4513'/%3E%3Cellipse cx='400' cy='450' rx='80' ry='40' fill='%238b4513'/%3E%3Cellipse cx='550' cy='450' rx='80' ry='40' fill='%238b4513'/%3E%3Ccircle cx='400' cy='380' r='50' fill='%23964B00'/%3E%3Ccircle cx='385' cy='370' r='8' fill='%23000'/%3E%3Ccircle cx='415' cy='370' r='8' fill='%23000'/%3E%3Cpath d='M 385 395 Q 400 405 415 395' stroke='%23000' stroke-width='3' fill='none'/%3E%3Ctext x='400' y='100' font-family='Arial' font-size='48' font-weight='bold' fill='%23fff' text-anchor='middle'%3EWhac-a-Mole%3C/text%3E%3C/svg%3E",
+    image: "../images/projects/proj_2.png",
     tags: ["HTML5", "CSS3", "JavaScript"],
     github: "https://github.com/jabezsamsondev-prog/whac-a-mole.git",
     demo: "https://fun-mole-game.firebaseapp.com/",
@@ -40,8 +38,7 @@ const projects = [
     title: "Rock Paper Scissors",
     description:
       "Interactive game implementation with computer AI opponent. Features animated hand gestures, round tracking and responsive design for all devices.",
-    image:
-      "data:image/svg+xml,%3Csvg width='800' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='bg3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ef4444;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23f97316;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23bg3)'/%3E%3Ctext x='200' y='330' font-size='120' text-anchor='middle'%3E✊%3C/text%3E%3Ctext x='400' y='330' font-size='120' text-anchor='middle'%3E✋%3C/text%3E%3Ctext x='600' y='330' font-size='120' text-anchor='middle'%3E✌️%3C/text%3E%3Ctext x='200' y='450' font-family='Arial' font-size='24' font-weight='bold' fill='%23fff' text-anchor='middle'%3ERock%3C/text%3E%3Ctext x='400' y='450' font-family='Arial' font-size='24' font-weight='bold' fill='%23fff' text-anchor='middle'%3EPaper%3C/text%3E%3Ctext x='600' y='450' font-family='Arial' font-size='24' font-weight='bold' fill='%23fff' text-anchor='middle'%3EScissors%3C/text%3E%3Ctext x='400' y='100' font-family='Arial' font-size='42' font-weight='bold' fill='%23fff' text-anchor='middle'%3ERock Paper Scissors%3C/text%3E%3C/svg%3E",
+    image: "../images/projects/proj_3.png",
     tags: ["JavaScript", "DOM", "Game Logic"],
     github: "https://github.com/jabezsamsondev-prog/rock-paper-scissors",
     demo: "https://rock-paper-scissors-cd587.firebaseapp.com/",
@@ -51,8 +48,7 @@ const projects = [
     title: "Tic Tac Toe",
     description:
       "Classic strategy game with intelligent AI opponent using minimax algorithm. Clean UI, move history tracking and winner detection logic.",
-    image:
-      "data:image/svg+xml,%3Csvg width='800' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='bg4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%233b82f6;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%238b5cf6;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23bg4)'/%3E%3Cline x1='333' y1='200' x2='333' y2='500' stroke='%23fff' stroke-width='4'/%3E%3Cline x1='467' y1='200' x2='467' y2='500' stroke='%23fff' stroke-width='4'/%3E%3Cline x1='200' y1='300' x2='600' y2='300' stroke='%23fff' stroke-width='4'/%3E%3Cline x1='200' y1='400' x2='600' y2='400' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M 230 230 L 303 303 M 303 230 L 230 303' stroke='%23fbbf24' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='400' cy='350' r='40' fill='none' stroke='%2310b981' stroke-width='6'/%3E%3Cpath d='M 497 430 L 570 503 M 570 430 L 497 503' stroke='%23fbbf24' stroke-width='6' stroke-linecap='round'/%3E%3Ctext x='400' y='120' font-family='Arial' font-size='48' font-weight='bold' fill='%23fff' text-anchor='middle'%3ETic Tac Toe%3C/text%3E%3C/svg%3E",
+    image: "../images/projects/proj_4.png",
     tags: ["JavaScript", "DOM", "Game Logic"],
     github: "https://github.com/jabezsamsondev-prog/modern-tic-tac-toe",
     demo: "https://tic-tac-toe-8c50e.firebaseapp.com/",
@@ -73,8 +69,7 @@ const projects = [
     title: "Fish2Shark Website for Client",
     description:
       "Complete end-to-end marketing and advertising website for a Canadian marketing agency. Features responsive design, integrated contact forms, service showcases and client testimonials with modern UI/UX.",
-    image:
-      "/images/fish2shark-screenshot.png",
+    image: "../images/projects/proj_6.png",
     tags: ["React", "Responsive Design", "Client Project"],
     github: "https://github.com/jabezsamsondev-prog/fish2shark_website",
     demo: "https://www.fish2shark.com/",
@@ -154,10 +149,10 @@ export function Work() {
                   />
                 </div>
                 <CardHeader className="flex-shrink-0">
-                  <CardTitle className="text-sm md:text-base">
+                  <CardTitle className="text-md md:text-lg">
                     {project.title}
                   </CardTitle>
-                  <CardDescription className="text-xs md:text-sm">
+                  <CardDescription className="text-xs md:text-sm leading-relaxed">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
@@ -186,7 +181,7 @@ export function Work() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Github className="mr-2 h-4 w-4" /> Code
+                      <Github className="mr-2 h-4 w-4" /> Source Code
                     </a>
                   </Button>
                   <Button size="sm" className="w-full" asChild>

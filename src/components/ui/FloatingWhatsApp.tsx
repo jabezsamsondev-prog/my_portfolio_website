@@ -77,7 +77,7 @@ export function FloatingWhatsApp() {
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="w-8 h-8 rounded-full hover:bg-secondary flex items-center justify-center transition-colors"
+                  className="w-8 h-8 rounded-full hover:bg-secondary flex items-center justify-center transition-colors cursor-pointer"
                   aria-label="Close"
                 >
                   <X className="h-5 w-5" />

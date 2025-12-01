@@ -1,45 +1,46 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import 'swiper/swiper-bundle.css';
+import "swiper/swiper-bundle.css";
 
 const blogPosts = [
   {
-    id: 1,
-    image: "/images/blogs/post_1.png",
-    title: "Why Modern Web Experience Is More About Empathy Than Code",
-    description:
-      "A short, clear guide that explains why empathy matters more than raw code when designing modern web experiences — practical, human-first advice for developers, designers and product people.",
+    id: 5,
+    image: "/images/blogs/post_5.jpg",
+    title:
+      "Semantic Search vs Traditional Keyword Matching: The Birth of Generative AI Chatbots",
     blogURL:
-      "https://www.linkedin.com/pulse/why-modern-web-experience-more-empathy-than-code-jabez-samson-52rfc",
+      "https://www.linkedin.com/pulse/semantic-search-vs-traditional-keyword-matching-birth-jabez-samson-yycbc",
   },
   {
-    id: 2,
-    image: "/images/blogs/post_2.png",
-    title: "The Cure for Overwhelm: Break Work Into Tiny Wins",
-    description:
-      "A simple, relatable guide on escaping overwhelm with small, meaningful steps — written for professionals, creators and anyone trying to move forward without burning out.",
+    id: 4,
+    image: "/images/blogs/post_4.png",
+    title:
+      "Building My Portfolio with TypeScript: A Journey of Learning with AI",
     blogURL:
-      "https://www.linkedin.com/pulse/cure-overwhelm-break-work-tiny-wins-jabez-samson-gutac",
+      "https://www.linkedin.com/pulse/building-my-portfolio-typescript-journey-learning-ai-jabez-samson-ms7cc",
   },
   {
     id: 3,
     image: "/images/blogs/post_3.jpg",
     title: "Why Every Developer Should Build a Portfolio Early",
-    description:
-      "A straightforward, human-first explanation of why all developers — junior or senior — should build a portfolio early instead of waiting for the “perfect moment.”",
     blogURL:
       "https://www.linkedin.com/pulse/why-every-developer-should-build-portfolio-early-jabez-samson-ag4mc",
   },
   {
-    id: 4,
-    image: "/images/blogs/post_4.png",
-    title: "Building My Portfolio with TypeScript: A Journey of Learning with AI",
-    description:
-      "My Journey of building my new and refined portfolio website using React/Vite and TypeScript. This article walks you through the process of developing and learning with AI.",
+    id: 2,
+    image: "/images/blogs/post_2.png",
+    title: "The Cure for Overwhelm: Break Work Into Tiny Wins",
     blogURL:
-      "https://www.linkedin.com/pulse/building-my-portfolio-typescript-journey-learning-ai-jabez-samson-ms7cc",
+      "https://www.linkedin.com/pulse/cure-overwhelm-break-work-tiny-wins-jabez-samson-gutac",
+  },
+  {
+    id: 1,
+    image: "/images/blogs/post_1.png",
+    title: "Why Modern Web Experience Is More About Empathy Than Code",
+    blogURL:
+      "https://www.linkedin.com/pulse/why-modern-web-experience-more-empathy-than-code-jabez-samson-52rfc",
   },
 ];
 
@@ -64,7 +65,7 @@ export function BlogSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-[32px] font-bold mb-4 bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent"
+          className="text-center text-[32px] font-bold mb-4"
         >
           Latest Blog Posts
         </motion.h2>
@@ -73,10 +74,14 @@ export function BlogSection() {
           <div className="w-full sm:w-[80%] mx-auto relative flex min-h-[1px]">
             <Swiper
               modules={[Navigation]}
-              navigation={blogPosts.length > 3 ? {
-                nextEl: '.blog-swiper-next',
-                prevEl: '.blog-swiper-prev',
-              } : false}
+              navigation={
+                blogPosts.length > 3
+                  ? {
+                      nextEl: ".blog-swiper-next",
+                      prevEl: ".blog-swiper-prev",
+                    }
+                  : false
+              }
               slidesPerView={1}
               breakpoints={{
                 640: { slidesPerView: 1 },
@@ -84,17 +89,22 @@ export function BlogSection() {
                 1024: { slidesPerView: 3 },
               }}
               spaceBetween={24}
+              loop={true}
               className="w-full h-full"
               ref={swiperRef}
             >
               {blogPosts.map((post, idx) => (
-                <SwiperSlide key={post.id} className="flex" style={cardHeight ? { height: cardHeight } : {}}>
+                <SwiperSlide
+                  key={post.id}
+                  className="flex"
+                  style={cardHeight ? { height: cardHeight } : {}}
+                >
                   <motion.div
                     ref={idx === 0 ? firstCardRef : undefined}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="group bg-card/60 border border-primary/20 rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:border-primary/40 transition-all duration-300 relative h-full w-full"
+                    className="group bg-card/60 border border-primary/20 rounded-2xl shadow-lg overflow-hidden flex flex-col items-center hover:border-primary/40 transition-all duration-300 relative w-full"
                   >
                     <div className="w-full aspect-[16/9] overflow-hidden relative">
                       <img
@@ -102,41 +112,36 @@ export function BlogSection() {
                         alt={post.title}
                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
-                        <a
-                          href={post.blogURL}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-auto"
-                          style={{ zIndex: 11 }}
-                        >
-                          <button className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-primary via-accent to-purple-500 text-white font-semibold shadow-lg hover:scale-105 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-primary/40 cursor-pointer">
-                            Read article
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                              className="w-5 h-5"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M18 13V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6m0 0v6m0-6L10 14"
-                              />
-                            </svg>
-                          </button>
-                        </a>
-                      </div>
                     </div>
-                    <div className="p-6 w-full flex-1 flex flex-col">
-                      <h3 className="font-bold text-md md:text-lg mb-2 bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">
-                        {post.title}
-                      </h3>
-                      <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
-                        {post.description}
-                      </p>
+                    <div className="p-6 w-full flex-1 flex flex-col gap-3">
+                      <div>
+                        <h3 className="font-bold text-md md:text-lg mb-2 text-white/80 line-clamp-2 overflow-hidden text-ellipsis">
+                          {post.title}
+                        </h3>
+                      </div>
+                      <a
+                        href={post.blogURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-primary via-accent to-purple-500 text-white font-semibold shadow-lg focus:outline-none focus:ring-primary/40 cursor-pointer w-max"
+                        style={{ zIndex: 11 }}
+                      >
+                        Read article
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M18 13V19a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </a>
                     </div>
                   </motion.div>
                 </SwiperSlide>
@@ -146,18 +151,38 @@ export function BlogSection() {
           {blogPosts.length > 3 && (
             <>
               <button
-                className="blog-swiper-prev absolute -left-8 top-1/2 -translate-y-1/2 sm:-translate-y-1/2 -translate-y-8 z-30 bg-gradient-to-br from-primary to-accent text-white rounded-full p-2 sm:p-3 shadow-lg hover:scale-110 transition-all duration-200 cursor-pointer"
+                className="blog-swiper-prev absolute top-1/2 -translate-y-1/2 sm:-translate-y-1/2 -translate-y-8 z-30 bg-gradient-to-br from-primary to-accent text-white rounded-full p-2 sm:p-2 shadow-lg hover:scale-110 transition-all duration-200 cursor-pointer"
                 aria-label="Previous"
-                style={{ left: 'calc(10% - 2rem)' }}
+                style={{ left: "calc(10% - 2rem)" }}
               >
-                <svg className="w-5 h-5 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 19l-7-7 7-7" /></svg>
+                <svg
+                  className="w-5 h-5 sm:w-7 sm:h-7"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M15 19l-7-7 7-7" />
+                </svg>
               </button>
               <button
-                className="blog-swiper-next absolute -right-8 top-1/2 -translate-y-1/2 sm:-translate-y-1/2 -translate-y-8 z-30 bg-gradient-to-br from-primary to-accent text-white rounded-full p-2 sm:p-3 shadow-lg hover:scale-110 transition-all duration-200 cursor-pointer"
+                className="blog-swiper-next absolute top-1/2   -translate-y-1/2 sm:-translate-y-1/2 -translate-y-8 z-30 bg-gradient-to-br from-primary to-accent text-white rounded-full p-2 sm:p-2 shadow-lg hover:scale-110 transition-all duration-200 cursor-pointer"
                 aria-label="Next"
-                style={{ right: 'calc(10% - 2rem)' }}
+                style={{ right: "calc(10% - 2rem)" }}
               >
-                <svg className="w-5 h-5 sm:w-7 sm:h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 5l7 7-7 7" /></svg>
+                <svg
+                  className="w-5 h-5 sm:w-7 sm:h-7"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M9 5l7 7-7 7" />
+                </svg>
               </button>
             </>
           )}
