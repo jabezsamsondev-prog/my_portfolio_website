@@ -6,6 +6,13 @@ import "swiper/swiper-bundle.css";
 
 const blogPosts = [
   {
+    id: 6,
+    image: "/images/blogs/post_6.png",
+    title: "The Rise of GEO: Optimizing for AI-Powered Search in 2025",
+    blogURL:
+      "https://www.linkedin.com/pulse/rise-geo-optimizing-ai-powered-search-2025-jabez-samson-wqcac",
+  },
+  {
     id: 5,
     image: "/images/blogs/post_5.jpg",
     title:
@@ -115,7 +122,10 @@ export function BlogSection() {
                     </div>
                     <div className="p-6 w-full flex-1 flex flex-col gap-3">
                       <div>
-                        <h3 className="font-bold text-md md:text-lg mb-2 text-white/80 line-clamp-2 overflow-hidden text-ellipsis">
+                        <h3
+                          className="font-bold text-md md:text-lg mb-2 text-white/80 line-clamp-2 overflow-hidden text-ellipsis"
+                          title={post.title}
+                        >
                           {post.title}
                         </h3>
                       </div>

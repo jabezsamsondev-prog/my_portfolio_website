@@ -6,7 +6,6 @@ import {
   CardTitle,
   CardDescription,
 } from "../ui/Card";
-import { Section } from "../ui/Section";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
 import { Github, ExternalLink } from "lucide-react";
@@ -87,7 +86,10 @@ export function Work() {
       : projects.filter((project) => project.category === activeTab);
 
   return (
-    <Section id="work" className="relative overflow-hidden">
+    <section
+      id="work"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden"
+    >
       {/* Game-themed background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div
@@ -103,7 +105,8 @@ export function Work() {
       <div className="absolute top-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent/10 rounded-full filter blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-12 text-center md:text-left">
           <h2 className="text-[32px] font-bold mb-4">Latest Work</h2>
           <div className="h-1 w-20 bg-accent rounded-full mx-auto md:mx-0" />
@@ -199,6 +202,7 @@ export function Work() {
           ))}
         </div>
       </div>
-    </Section>
+      </div>
+    </section>
   );
 }

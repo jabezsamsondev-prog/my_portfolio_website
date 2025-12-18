@@ -7,8 +7,9 @@ import {
 } from "../ui/Card";
 import { Section } from "../ui/Section";
 import { Badge } from "../ui/Badge";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { Briefcase } from "lucide-react";
+import { useRef } from "react";
 
 const experiences = [
   {
@@ -56,19 +57,48 @@ const experiences = [
 ];
 
 export function Experience() {
+  const timelineRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start center", "end center"],
+  });
+
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
     <Section id="experience" className="bg-secondary/30">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center md:text-left">
-          <h2 className="text-[32px] font-bold mb-4">Work Experience</h2>
+          <h2 className="text-[32px] font-bold mb-4">Professional Experience</h2>
           <div className="h-1 w-20 bg-accent rounded-full mx-auto md:mx-0" />
         </div>
 
         {/* Timeline for desktop, stacked cards for mobile */}
-        <div className="relative">
-          {/* Timeline line - hidden on mobile, visible on md+ */}
-          <div className="hidden md:block absolute left-[15px] lg:left-[calc(50%-2px)] top-0 bottom-0 w-1 bg-white/10 shadow-lg shadow-primary/20 pointer-events-none" />
-
+        <div className="relative" ref={timelineRef}>
+          {/* Timeline line - connecting first dot to last dot */}
+          <div 
+            className="hidden md:block absolute left-[15px] lg:left-[calc(50%-2px)] w-1 bg-white/10 shadow-lg shadow-primary/20 pointer-events-none" 
+            style={{ 
+              top: '1.5rem',
+              height: 'calc(100% - 3rem - 12rem)'
+            }} 
+          />
+          
+          {/* Animated fill line */}
+          <motion.div
+            className="hidden md:block absolute left-[15px] lg:left-[calc(50%-2px)] w-1 bg-primary pointer-events-none origin-top shadow-lg shadow-primary/50"
+            style={{
+              top: '1.5rem',
+              height: 'calc(100% - 3rem - 12rem)',
+              scaleY,
+            }}
+          />
+          
           <div className="space-y-8 md:space-y-12">
             {experiences.map((exp, index) => (
               <motion.div

@@ -63,11 +63,11 @@ export function Inspiration() {
             >
               <span className="text-primary font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent px-1">
                 Eminem's
-              </span>{" "}
+              </span>
               music has shaped the way I work more than anything else. His
               honesty, discipline and "get up no matter what" attitude taught me
               to push through tough days and show up even when it isn't easy.
-              Songs like{" "}
+              Songs like
               <span className="text-primary font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent px-1">
                 Beautiful Pain
               </span>
