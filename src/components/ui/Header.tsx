@@ -1,6 +1,6 @@
 import { Button } from "./Button";
 import { motion } from "framer-motion";
-import { Menu, Download } from "lucide-react";
+import { Menu, ArrowDownToLine } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa6";
 import { useState, useEffect, useRef } from "react";
 import { SidebarMenu } from "./SidebarMenu";
@@ -246,7 +246,7 @@ export function Header() {
                     }}
                     className="inline-block"
                   >
-                    <Download className="h-4 w-4" />
+                    <ArrowDownToLine className="h-4 w-4" />
                   </motion.div>
                 </a>
               </Button>

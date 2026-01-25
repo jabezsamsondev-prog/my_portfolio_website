@@ -1,6 +1,6 @@
 import { Button } from "../ui/Button";
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, ArrowDownToLine } from "lucide-react";
 import {
   SiMongodb,
   SiExpress,
@@ -269,7 +269,7 @@ export function Hero() {
                       }}
                       className="ml-2 inline-block"
                     >
-                      <Download className="h-4 w-4 md:h-5 md:w-5" />
+                      <ArrowDownToLine className="h-4 w-4 md:h-5 md:w-5" />
                     </motion.div>
                   </a>
                 </Button>

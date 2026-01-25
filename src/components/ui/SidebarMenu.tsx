@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Download } from "lucide-react";
+import { X, ArrowDownToLine } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa6";
 import ReactDOM from "react-dom";
 
@@ -91,7 +91,7 @@ export function SidebarMenu({
                   download="Jabez_Samson_CV.pdf"
                   className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-white/40 hover:border-primary hover:bg-primary/10 rounded-md transition-colors text-sm"
                 >
-                  <Download className="h-4 w-4" />
+                  <ArrowDownToLine className="h-4 w-4" />
                   Download CV
                 </a>
                 <a
