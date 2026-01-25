@@ -22,7 +22,7 @@ export function Highlights() {
     },
     {
       icon: SiQuora,
-      value: "6,45,000+",
+      value: "6,46,000+",
       label: "Content Views",
       platform: "My answers on Quora have gotten attention",
       color: "from-red-500/20 to-orange-500/20",
@@ -273,7 +273,7 @@ export function Highlights() {
                     })()}
                   </motion.div>
                   <div>
-                    <div className="text-xl md:text-2xl font-bold mb-3 bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">
+                    <div className="text-xl md:text-2xl font-bold mb-3 text-red-500">
                       {highlights[2].value}
                     </div>
                     <p className="text-sm md:text-md font-semibold text-foreground/90 mb-2">

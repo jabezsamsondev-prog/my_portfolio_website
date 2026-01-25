@@ -61,22 +61,22 @@ export function Inspiration() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <span className="text-primary font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent px-1">
+              <span className="text-purple-300 font-bold px-1">
                 Eminem's
               </span>
               music has shaped the way I work more than anything else. His
               honesty, discipline and "get up no matter what" attitude taught me
               to push through tough days and show up even when it isn't easy.
               Songs like
-              <span className="text-primary font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent px-1">
+              <span className="text-purple-300 font-bold px-1">
                 Beautiful Pain
               </span>
               ,
-              <span className="text-primary font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent px-1">
+              <span className="text-purple-300 font-bold px-1">
                 Survival
               </span>
               and{" "}
-              <span className="text-primary font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent px-1">
+              <span className="text-purple-300 font-bold px-1">
                 Lighters
               </span>
               remind me to stay hungry, stay grounded and keep fighting despite

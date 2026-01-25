@@ -8,7 +8,7 @@ import {
 import { Section } from "../ui/Section";
 import { Badge } from "../ui/Badge";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Briefcase } from "lucide-react";
+import { Briefcase, Check } from "lucide-react";
 import { useRef } from "react";
 
 const experiences = [
@@ -16,7 +16,11 @@ const experiences = [
     company: "Devship Pvt. Ltd.",
     role: "Senior Software Developer",
     period: "2021 - Present",
-    description: `Led front-end development for a comprehensive CRM system, building an intuitive admin dashboard and client-facing features including training modules and e-commerce capabilities. Collaborated with cross-functional teams to define project requirements, manage timelines and ensure the delivery of high-quality, scalable code. Built few other full-fledged web applications involving features like Inventory Management, E-Commerce and Financial Review.`,
+    description: [
+      "Led front-end development for a comprehensive CRM system, building an intuitive admin dashboard and client-facing features including training modules and e-commerce capabilities.",
+      "Collaborated with cross-functional teams to define project requirements, manage timelines and ensure the delivery of high-quality, scalable code.",
+      "Built few other full-fledged web applications involving features like Inventory Management, E-Commerce and Financial Review.",
+    ],
     skills: [
       "JavaScript",
       "React",
@@ -30,7 +34,12 @@ const experiences = [
     company: "Logistics Sector Skill Council",
     role: "Web Developer",
     period: "2018 - 2021",
-    description: `Spearheaded end-to-end development and delivery of Learning Management Systems (LMSs), from requirement gathering to deployment and post-launch support. Curated and structured educational content to align with client requirements and user engagement goals. Collaborated directly with clients to analyze problems, propose solutions and ensure satisfaction. Managed a cross-functional team, overseeing project timelines, task allocation and quality assurance.`,
+    description: [
+      "Spearheaded end-to-end development and delivery of Learning Management Systems (LMSs), from requirement gathering to deployment and post-launch support.",
+      "Curated and structured educational content to align with client requirements and user engagement goals.",
+      "Collaborated directly with clients to analyze problems, propose solutions and ensure satisfaction.",
+      "Managed a cross-functional team, overseeing project timelines, task allocation and quality assurance.",
+    ],
     skills: [
       "LMS",
       "JavaScript",
@@ -42,23 +51,26 @@ const experiences = [
     company: "Ellipticals Networks Labs",
     role: "Product Manager",
     period: "2018",
-    description:
-      "Directed and coordinated the product delivery team to launch a real-money gaming app. Managed the monitoring of the game 24/7, the game master dashboard, curated the payouts enabling technical support.",
+    description: [
+      "Directed and coordinated the product delivery team to launch a real-money gaming app.",
+      "Managed the monitoring of the game 24/7, the game master dashboard, curated the payouts enabling technical support.",
+    ],
     skills: ["JavaScript", "Game Management", "Product Management"],
   },
   {
     company: "Evansys Technologies",
     role: "Technical Head",
     period: "2017 - 2018",
-    description:
+    description: [
       "Developed and managed websites for clients from educational institutions starting from conception to deployment followed by post-launch support and maintenance.",
+    ],
     skills: ["Web Technology", "JavaScript", "Team Management"],
   },
 ];
 
 export function Experience() {
   const timelineRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: timelineRef,
     offset: ["start center", "end center"],
@@ -74,31 +86,33 @@ export function Experience() {
     <Section id="experience" className="bg-secondary/30">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center md:text-left">
-          <h2 className="text-[32px] font-bold mb-4">Professional Experience</h2>
+          <h2 className="text-[32px] font-bold mb-4">
+            Professional Experience
+          </h2>
           <div className="h-1 w-20 bg-accent rounded-full mx-auto md:mx-0" />
         </div>
 
         {/* Timeline for desktop, stacked cards for mobile */}
         <div className="relative" ref={timelineRef}>
           {/* Timeline line - connecting first dot to last dot */}
-          <div 
-            className="hidden md:block absolute left-[15px] lg:left-[calc(50%-2px)] w-1 bg-white/10 shadow-lg shadow-primary/20 pointer-events-none" 
-            style={{ 
-              top: '1.5rem',
-              height: 'calc(100% - 3rem - 12rem)'
-            }} 
+          <div
+            className="hidden md:block absolute left-[15px] lg:left-[calc(50%-2px)] w-1 bg-white/10 shadow-lg shadow-primary/20 pointer-events-none"
+            style={{
+              top: "1.5rem",
+              height: "calc(100% - 3rem - 12rem)",
+            }}
           />
-          
+
           {/* Animated fill line */}
           <motion.div
             className="hidden md:block absolute left-[15px] lg:left-[calc(50%-2px)] w-1 bg-primary pointer-events-none origin-top shadow-lg shadow-primary/50"
             style={{
-              top: '1.5rem',
-              height: 'calc(100% - 3rem - 12rem)',
+              top: "1.5rem",
+              height: "calc(100% - 3rem - 12rem)",
               scaleY,
             }}
           />
-          
+
           <div className="space-y-8 md:space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
@@ -137,11 +151,13 @@ export function Experience() {
                   <Briefcase className="w-4 h-4 text-primary-foreground" />
                 </motion.div>
 
-                <Card className={`${
-                  index === 0 || index === 2
-                    ? "border-r-4 md:border-r-0 md:border-2 border-r-primary"
-                    : "border-l-4 md:border-l-0 md:border-2 border-l-primary"
-                } hover:border-primary ml-0 md:ml-12 lg:ml-0 transition-colors duration-200`}>
+                <Card
+                  className={`${
+                    index === 0 || index === 2
+                      ? "border-r-4 md:border-r-0 md:border-2 border-r-primary"
+                      : "border-l-4 md:border-l-0 md:border-2 border-l-primary"
+                  } hover:border-primary ml-0 md:ml-12 lg:ml-0 transition-colors duration-200`}
+                >
                   <CardHeader>
                     <div className="flex flex-row justify-between items-center gap-4 mb-1">
                       <CardTitle className="text-base md:text-lg flex-1 primary">
@@ -156,9 +172,14 @@ export function Experience() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-white/90 mb-4 text-xs md:text-sm leading-loose">
-                      {exp.description}
-                    </p>
+                    <div className="text-white/90 mb-4 text-xs md:text-sm leading-loose">
+                      {exp.description.map((point, pointIndex) => (
+                        <div key={pointIndex} className="flex items-start gap-2 mb-2">
+                          <Check className="w-4 h-4 text-accent mt-2 flex-shrink-0" />
+                          <span>{point}</span>
+                        </div>
+                      ))}
+                    </div>
                     <div className="flex gap-2 flex-wrap">
                       {exp.skills.map((skill) => (
                         <Badge

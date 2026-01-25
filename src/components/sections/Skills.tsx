@@ -2,7 +2,7 @@ import { Section } from "../ui/Section";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
 import { Badge } from "../ui/Badge";
 import { motion } from "framer-motion";
-import { Code2, Wrench, Layout, Database, Briefcase } from "lucide-react";
+import { Code2, Wrench, Layout, Database, Briefcase, Cloud } from "lucide-react";
 
 export function Skills() {
   const skillCategories = [
@@ -66,6 +66,15 @@ export function Skills() {
         "Project Coordination",
       ],
     },
+    {
+      title: "Deployment",
+      icon: Cloud,
+      skills: [
+        "Firebase Hosting",
+        "Vercel",
+        "Digital Ocean",
+      ],
+    },
   ];
 
   return (
@@ -122,7 +131,7 @@ export function Skills() {
                       </div>
                       <CardTitle className="text-base md:text-lg font-extrabold">
                         <span
-                          className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient"
+                          className="bg-gradient-to-r from-purple-300 via-purple-200 to-pink-300 bg-clip-text text-transparent animate-gradient"
                           style={{ backgroundSize: "200% auto" }}
                         >
                           {category.title}
@@ -144,7 +153,7 @@ export function Skills() {
                         >
                           <Badge
                             variant="secondary"
-                            className="bg-primary/15 text-muted-foreground border border-primary/30 hover:bg-primary/25 hover:border-primary/50 md:text-xs px-3 py-1.5 font-medium transition-[background-color,border-color] duration-200 ease-out"
+                            className="bg-purple-900/30 text-purple-200 border border-purple-400/40 hover:bg-purple-800/40 hover:border-purple-300/60 text-xs md:text-sm px-2 py-1 md:px-3 md:py-1.5 font-medium transition-[background-color,border-color] duration-200 ease-out"
                           >
                             {skill}
                           </Badge>

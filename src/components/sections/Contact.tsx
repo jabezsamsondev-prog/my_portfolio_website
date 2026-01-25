@@ -344,7 +344,7 @@ export function Contact() {
         <div className="mb-12 text-center">
           <h2 className="text-[32px] font-bold mb-4">Get In Touch</h2>
           <div className="h-1 w-20 bg-primary rounded-full mx-auto" />
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-xs md:text-sm px-4">
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm md:text-base px-4">
             Have a project in mind or just want to say hi? I'm always open to
             discussing new projects, creative ideas or opportunities to be part
             of your visions.
@@ -366,7 +366,7 @@ export function Contact() {
                   target="_blank"
                 >
                   <CardContent className="flex items-center gap-4 p-5 md:p-6">
-                    <div className="bg-primary/20 p-3 rounded-full text-primary flex-shrink-0">
+                    <div className="bg-purple-800/20 p-3 rounded-full text-purple-300 flex-shrink-0">
                       <Mail className="h-5 w-5" />
                     </div>
                     <div className="min-w-0">
@@ -374,7 +374,7 @@ export function Contact() {
                         Email
                       </h3>
                       <p className="text-muted-foreground text-xs md:text-sm truncate">
-                        jabezsamson.dev@gmail.com
+                        connect@jabez.me
                       </p>
                     </div>
                   </CardContent>
@@ -387,7 +387,7 @@ export function Contact() {
                   target="_blank"
                 >
                   <CardContent className="flex items-center gap-4 p-5 md:p-6">
-                    <div className="bg-primary/20 p-3 rounded-full text-primary flex-shrink-0">
+                    <div className="bg-purple-800/20 p-3 rounded-full text-purple-300 flex-shrink-0">
                       <Phone className="h-5 w-5" />
                     </div>
                     <div className="min-w-0">
@@ -403,7 +403,7 @@ export function Contact() {
               </Card>
               <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
                 <CardContent className="flex items-center gap-4 p-5 md:p-6">
-                  <div className="bg-primary/20 p-3 rounded-full text-primary flex-shrink-0">
+                  <div className="bg-purple-800/20 p-3 rounded-full text-purple-300 flex-shrink-0">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div className="min-w-0">
@@ -420,63 +420,84 @@ export function Contact() {
 
             {/* Social Media Section */}
             <div className="mt-8 pt-6 border-t border-primary/20">
-              <h3 className="text-sm md:text-sm font-semibold mb-5">
-                Follow Me on Social Media
-              </h3>
               <div className="flex gap-3">
                 <a
                   href="https://www.linkedin.com/in/jabezsamson/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-secondary/50 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
+                  className="group relative bg-secondary/50 hover:bg-blue-500/20 border border-primary/20 hover:border-blue-500/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="h-5 w-5 text-foreground" />
+                  <Linkedin className="h-5 w-5 text-blue-400" />
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-xs px-2 py-1 md:px-3 md:py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg z-10">
+                    LinkedIn
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-blue-500"></div>
+                  </div>
                 </a>
                 <a
                   href="https://github.com/jabezsamsondev-prog"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-secondary/50 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
+                  className="group relative bg-secondary/50 hover:bg-gray-600/20 border border-primary/20 hover:border-gray-600/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
                   aria-label="GitHub"
                 >
-                  <Github className="h-5 w-5 text-foreground" />
+                  <Github className="h-5 w-5 text-gray-300" />
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-700 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg">
+                    GitHub
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-700"></div>
+                  </div>
                 </a>
                 <a
                   href="https://www.quora.com/profile/Jabez-Samson"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-secondary/50 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
+                  className="group relative bg-secondary/50 hover:bg-red-700/20 border border-primary/20 hover:border-red-700/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
                   aria-label="Quora"
                 >
-                  <SiQuora className="h-5 w-5 text-foreground" />
+                  <SiQuora className="h-5 w-5 text-red-700" />
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-red-700 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg">
+                    Quora
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-red-700"></div>
+                  </div>
                 </a>
                 <a
                   href="https://x.com/jabinem"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-secondary/50 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
+                  className="group relative bg-secondary/50 hover:bg-slate-800/20 border border-primary/20 hover:border-slate-800/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
                   aria-label="X (Twitter)"
                 >
-                  <FaXTwitter className="h-5 w-5 text-foreground" />
+                  <FaXTwitter className="h-5 w-5 text-slate-200" />
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg">
+                    X (Twitter)
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800"></div>
+                  </div>
                 </a>
                 <a
                   href="https://www.instagram.com/jabezsamson/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-secondary/50 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
+                  className="group relative bg-secondary/50 hover:bg-pink-500/20 border border-primary/20 hover:border-pink-500/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
                   aria-label="Instagram"
                 >
-                  <Instagram className="h-5 w-5 text-foreground" />
+                  <Instagram className="h-5 w-5 text-pink-500" />
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-pink-500 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg">
+                    Instagram
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-pink-500"></div>
+                  </div>
                 </a>
                 <a
                   href="https://www.facebook.com/jabezsamson95"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-secondary/50 hover:bg-primary/20 border border-primary/20 hover:border-primary/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
+                  className="group relative bg-secondary/50 hover:bg-blue-500/20 border border-primary/20 hover:border-blue-500/40 p-3 rounded-full transition-all duration-300 hover:scale-110"
                   aria-label="Facebook"
                 >
-                  <Facebook className="h-5 w-5 text-foreground" />
+                  <Facebook className="h-5 w-5 text-blue-500" />
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg">
+                    Facebook
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-blue-600"></div>
+                  </div>
                 </a>
               </div>
             </div>
@@ -507,7 +528,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={`w-full rounded-lg border-0 bg-secondary/70 px-4 py-3.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:bg-secondary focus:ring-2 transition-all duration-200 outline-none ${
+                    className={`w-full rounded-lg border border-white/10 bg-secondary/70 px-4 py-3.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:bg-primary/20 focus:ring-2 transition-all duration-200 outline-none ${
                       errors.name
                         ? "ring-2 ring-red-500/50 focus:ring-red-500/50"
                         : "focus:ring-primary/50"
@@ -532,7 +553,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={`w-full rounded-lg border-0 bg-secondary/70 px-4 py-3.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:bg-secondary focus:ring-2 transition-all duration-200 outline-none ${
+                    className={`w-full rounded-lg border border-white/10 bg-secondary/70 px-4 py-3.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:bg-primary/20 focus:ring-2 transition-all duration-200 outline-none ${
                       errors.email
                         ? "ring-2 ring-red-500/50 focus:ring-red-500/50"
                         : "focus:ring-primary/50"
@@ -558,7 +579,7 @@ export function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={`w-full rounded-lg border-0 bg-secondary/70 px-4 py-3.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:bg-secondary focus:ring-2 transition-all duration-200 outline-none ${
+                  className={`w-full rounded-lg border border-white/10 bg-secondary/70 px-4 py-3.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:bg-primary/20 focus:ring-2 transition-all duration-200 outline-none ${
                     errors.subject
                       ? "ring-2 ring-red-500/50 focus:ring-red-500/50"
                       : "focus:ring-primary/50"
@@ -583,7 +604,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={`w-full min-h-[140px] md:min-h-[160px] rounded-lg border-0 bg-secondary/70 px-4 py-3.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:bg-secondary focus:ring-2 transition-all duration-200 resize-none outline-none ${
+                  className={`w-full min-h-[140px] md:min-h-[160px] rounded-lg border border-white/10 bg-secondary/70 px-4 py-3.5 text-xs text-foreground placeholder:text-muted-foreground/40 focus:bg-primary/20 focus:ring-2 transition-all duration-200 resize-none outline-none ${
                     errors.message
                       ? "ring-2 ring-red-500/50 focus:ring-red-500/50"
                       : "focus:ring-primary/50"
@@ -594,19 +615,30 @@ export function Contact() {
                   <p className="text-xs text-red-400 mt-1">{errors.message}</p>
                 )}
               </div>
-              <Button
-                type="submit"
-                className="w-full group"
-                size="lg"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                {isSubmitting ? (
-                  <Loader2 className="ml-2 h-4 w-4 animate-spin" />
-                ) : (
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                )}
-              </Button>
+              <div className="group relative flex md:justify-end">
+                <Button
+                  type="submit"
+                  className="w-full md:w-auto group/btn relative overflow-hidden bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/40 transition-all duration-300 hover:scale-[1.02] disabled:hover:scale-100 disabled:opacity-50 disabled:cursor-not-allowed border-0"
+                  size="sm"
+                  disabled={isSubmitting}
+                >
+                  {/* Animated background overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-pink-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 rounded-full" />
+                  
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-in-out rounded-full" />
+                  
+                  {/* Button content */}
+                  <span className="relative z-10 flex items-center justify-center">
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? (
+                      <Loader2 className="ml-2 h-4 w-4 animate-spin" />
+                    ) : (
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    )}
+                  </span>
+                </Button>
+              </div>
             </form>
           </motion.div>
         </div>
