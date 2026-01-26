@@ -172,7 +172,7 @@ export function Experience() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-white/90 mb-4 text-xs md:text-sm leading-loose">
+                    <div className="text-white/90 mb-8 text-xs md:text-sm leading-loose">
                       {exp.description.map((point, pointIndex) => (
                         <div key={pointIndex} className="flex items-start gap-2 mb-2">
                           <Check className="w-4 h-4 text-accent mt-2 flex-shrink-0" />

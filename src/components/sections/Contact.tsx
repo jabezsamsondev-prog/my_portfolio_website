@@ -351,7 +351,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-[380px_1fr] gap-8 lg:gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-[380px_1fr] gap-8 lg:gap-12 max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}

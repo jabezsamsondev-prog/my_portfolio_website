@@ -22,7 +22,7 @@ export function Highlights() {
     },
     {
       icon: SiQuora,
-      value: "6,46,000+",
+      value: "6,47,000+",
       label: "Content Views",
       platform: "My answers on Quora have gotten attention",
       color: "from-red-500/20 to-orange-500/20",

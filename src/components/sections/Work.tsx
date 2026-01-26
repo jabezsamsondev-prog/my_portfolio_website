@@ -83,6 +83,7 @@ const projects = [
     demo: "https://gemini-clone-6c34f.firebaseapp.com/",
     category: "Frontend",
     order: 50,
+    hidden: true,
   },
   {
     title: "Ball Chase Challenge",
@@ -134,10 +135,12 @@ export function Work() {
   const [activeTab, setActiveTab] = useState("All");
   const categories = ["All", "Frontend", "Enterprise", "Games"];
 
+  const visibleProjects = projects.filter((project) => !project.hidden);
+
   const filteredProjects =
     activeTab === "All"
-      ? projects
-      : projects.filter((project) => project.category === activeTab);
+      ? visibleProjects
+      : visibleProjects.filter((project) => project.category === activeTab);
 
   const sortedProjects = [...filteredProjects].sort(
     (a, b) => (b.order || 0) - (a.order || 0),

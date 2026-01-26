@@ -20,6 +20,7 @@ export function Skills() {
         "React",
         "NextJS",
         "API Integration",
+        "Moodle - LMS"
       ],
     },
     {
@@ -47,7 +48,6 @@ export function Skills() {
         "Notion",
         "Postman",
         "Jira",
-        "Trello",
         "Microsoft Clarity",
         "Copilot / Cursor",
         "Prompt Engineering",
@@ -60,8 +60,8 @@ export function Skills() {
       skills: [
         "Requirement Gathering",
         "Agile",
-        "Team Leadership",
-        "Communication",
+        "Leadership",
+        "Business Communication",
         "Client Engagement",
         "Project Coordination",
       ],
@@ -73,6 +73,8 @@ export function Skills() {
         "Firebase Hosting",
         "Vercel",
         "Digital Ocean",
+        "Netlify",
+        "Managed Hosting",
       ],
     },
   ];
@@ -97,7 +99,7 @@ export function Skills() {
       <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-primary/10 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 left-10 w-[400px] h-[400px] bg-accent/10 rounded-full filter blur-3xl pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

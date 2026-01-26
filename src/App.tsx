@@ -31,7 +31,7 @@ function App() {
 
       {/* Footer */}
       <footer className="bg-secondary/30 border-t border-primary/20 px-4 py-8 md:py-12">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             {/* Brand Section - Left */}
             <div className="text-center md:text-left">
