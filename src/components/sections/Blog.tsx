@@ -6,6 +6,30 @@ import "swiper/swiper-bundle.css";
 
 const blogPosts = [
   {
+    id: 9,
+    image: "/images/blogs/post_9.png",
+    title:
+      "The Hidden Tech Divide: Why 90% of Developers Will Be 'Average' in the AI Era",
+    blogURL:
+      "https://www.linkedin.com/pulse/hidden-tech-divide-why-90-developers-average-ai-era-jabez-samson-3hk2c",
+  },
+  {
+    id: 8,
+    image: "/images/blogs/post_8.png",
+    title:
+      "We're Not Building Software for Humans Anymore — We're Building It for AI Agents",
+    blogURL:
+      "https://www.linkedin.com/pulse/were-building-software-humans-anymore-ai-agents-jabez-samson-soxuc",
+  },
+  {
+    id: 7,
+    image: "/images/blogs/post_7.png",
+    title:
+      "The Silent Death of 'Search' — Why AI Answers Are Replacing Websites Without Anyone Noticing",
+    blogURL:
+      "https://www.linkedin.com/pulse/silent-death-search-why-ai-answers-replacing-websites-jabez-samson-lem6c",
+  },
+  {
     id: 6,
     image: "/images/blogs/post_6.png",
     title: "The Rise of GEO: Optimizing for AI-Powered Search in 2025",

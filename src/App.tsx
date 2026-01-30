@@ -3,6 +3,7 @@ import { About } from "./components/sections/About";
 import { Skills } from "./components/sections/Skills";
 import { Experience } from "./components/sections/Experience";
 import { Work } from "./components/sections/Work";
+import { Services } from "./components/sections/Services";
 import { Highlights } from "./components/sections/Highlights";
 import { Inspiration } from "./components/sections/Inspiration";
 import { Contact } from "./components/sections/Contact";
@@ -19,8 +20,9 @@ function App() {
       <Header />
       <Hero />
       <Experience />
-      <Skills />
       <Work />
+      <Services />
+      <Skills />
       <Highlights />
       <About />
       <Inspiration />
@@ -84,6 +86,16 @@ function App() {
                   Projects
                 </a>
                 <a 
+                  href="#services" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="block text-sm text-muted-foreground hover:text-purple-300 transition-colors cursor-pointer"
+                >
+                  Services
+                </a>
+                <a 
                   href="#experience" 
                   onClick={(e) => {
                     e.preventDefault();
@@ -101,12 +113,10 @@ function App() {
           <div className="border-t border-primary/20 mt-8 pt-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="text-xs md:text-sm text-muted-foreground/80">
-                Last updated: {new Date().toLocaleString('en-US', {
+                Last updated: {new Date(__LAST_UPDATED__).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'short',
-                  day: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit'
+                  day: 'numeric'
                 })}
               </div>
               <div className="text-xs md:text-sm text-muted-foreground text-center">

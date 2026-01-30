@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Award, Briefcase, GraduationCap, BookOpen } from "lucide-react";
+import { Award, Briefcase, GraduationCap, BookOpen, Users } from "lucide-react";
 import { SiQuora } from "react-icons/si";
 
 export function Highlights() {
@@ -27,6 +27,15 @@ export function Highlights() {
       platform: "My answers on Quora have gotten attention",
       color: "from-red-500/20 to-orange-500/20",
       iconColor: "text-red-400",
+    },
+    {
+      icon: Users,
+      value: "10+",
+      label: "Community Contributions",
+      description: "Active contributor in Stack Overflow & GitHub",
+      color: "from-gray-500/20 to-slate-500/20",
+      iconColor: "text-gray-300",
+      link: "https://stackoverflow.com/users/9132170/jabez-samson",
     },
   ];
 
@@ -283,6 +292,49 @@ export function Highlights() {
                       {highlights[2].platform}
                     </p>
                   </div>
+                </div>
+              </motion.div>
+            </a>
+
+            {/* Open Source Contribution */}
+            <a
+              href="https://github.com/jabezsamsondev-prog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-2xl border border-primary/10 bg-secondary/30 backdrop-blur-sm p-6 hover:border-primary/30 transition-all duration-300 md:col-span-2 lg:col-span-2 cursor-pointer"
+            >
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${highlights[3].color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+              />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="relative z-10 flex flex-col justify-between h-full"
+              >
+                <motion.div
+                  className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${highlights[3].color} mb-4`}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  {(() => {
+                    const Icon = highlights[3].icon;
+                    return (
+                      <Icon className={`w-8 h-8 ${highlights[3].iconColor}`} />
+                    );
+                  })()}
+                </motion.div>
+                <div>
+                  <div className="text-xl md:text-2xl font-bold mb-3 text-gray-300">
+                    {highlights[3].value}
+                  </div>
+                  <p className="text-sm md:text-md font-semibold text-foreground/90 mb-2">
+                    {highlights[3].label}
+                  </p>
+                  <p className="text-xs text-muted-foreground/80">
+                    {highlights[3].description}
+                  </p>
                 </div>
               </motion.div>
             </a>

@@ -14,6 +14,18 @@ import { useState } from "react";
 
 const projects = [
   {
+    title: "Swift Steeds Trading & Consultancy",
+    description:
+      "Complete end-to-end marketing and advertising website for a Indian trading company. Features responsive design, integrated contact forms, service showcases and client testimonials with modern UI/UX.",
+    image: "/images/projects/swiftsteeds.png",
+    tags: ["JavaScript", "Responsive Design"],
+    github: "#",
+    demo: "https://www.swiftsteeds.com/",
+    category: "Frontend",
+    isConfidential: true,
+    order: 65,
+  },
+  {
     title: "Famili Cloud",
     description:
       "Famili Cloud is where your family's memories, stories, and connections live forever — beautifully organized, completely private, and always accessible. A digital sanctuary for preserving family legacy across generations.",
@@ -21,7 +33,7 @@ const projects = [
     tags: ["React", "JavaScript", "Firebase", "Design"],
     github: "#",
     demo: "https://www.famili.cloud/",
-    category: "Frontend",
+    category: "Full Stack",
     isConfidential: true,
     order: 100,
   },
@@ -33,7 +45,7 @@ const projects = [
     tags: ["LMS Setup", "Moodle", "JavaScript", "Design"],
     github: "#",
     demo: "https://edc.lsc-india.org/",
-    category: "Enterprise",
+    category: "Full Stack",
     isConfidential: true,
     order: 90,
   },
@@ -45,7 +57,7 @@ const projects = [
     tags: ["React", "JavaScript", "Node", "Enterprise CRM"],
     github: "#",
     demo: "#",
-    category: "Enterprise",
+    category: "Full Stack",
     isConfidential: true,
     order: 80,
   },
@@ -57,7 +69,7 @@ const projects = [
     tags: ["React", "JavaScript", "Node", "Stripe"],
     github: "#",
     demo: "#",
-    category: "Enterprise",
+    category: "Full Stack",
     isConfidential: true,
     order: 70,
   },
@@ -133,7 +145,7 @@ const projects = [
 
 export function Work() {
   const [activeTab, setActiveTab] = useState("All");
-  const categories = ["All", "Frontend", "Enterprise", "Games"];
+  const categories = ["All", "Full Stack", "Frontend", "Games"];
 
   const visibleProjects = projects.filter((project) => !project.hidden);
 
@@ -199,7 +211,7 @@ export function Work() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.2 }}
               >
-                <Card className="h-full flex flex-col overflow-hidden group hover:border-primary/60 transition-colors duration-200">
+                <Card className="h-full flex flex-col overflow-hidden group border-2 border-primary/20 hover:border-white/60 transition-[border-color,box-shadow] duration-200 ease-out hover:shadow-lg hover:shadow-white/10">
                   <div className="relative h-40 sm:h-48 overflow-hidden">
                     <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors duration-200 ease-out z-10" />
                     <img
@@ -226,7 +238,7 @@ export function Work() {
                         <Badge
                           key={tag}
                           variant="secondary"
-                          className="bg-primary/10 text-primary hover:bg-primary/20 text-xs"
+                          className="bg-purple-900/30 text-purple-200 border border-purple-400/40 hover:bg-purple-800/40 hover:border-purple-300/60 text-[10px] md:text-xs px-1.5 py-0.5 md:px-2 md:py-1 font-medium transition-[background-color,border-color] duration-200 ease-out"
                         >
                           {tag}
                         </Badge>

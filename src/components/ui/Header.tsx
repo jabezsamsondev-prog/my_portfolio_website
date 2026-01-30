@@ -12,9 +12,8 @@ export function Header() {
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
 
   const experienceRef = useRef<HTMLButtonElement>(null);
-  const skillsRef = useRef<HTMLButtonElement>(null);
   const workRef = useRef<HTMLButtonElement>(null);
-  const aboutRef = useRef<HTMLButtonElement>(null);
+  const servicesRef = useRef<HTMLButtonElement>(null);
   const contactRef = useRef<HTMLButtonElement>(null);
   const blogRef = useRef<HTMLButtonElement>(null);
 
@@ -22,9 +21,8 @@ export function Header() {
     const updateIndicator = () => {
       let ref;
       if (activeSection === "experience") ref = experienceRef;
-      else if (activeSection === "skills") ref = skillsRef;
       else if (activeSection === "work") ref = workRef;
-      else if (activeSection === "about") ref = aboutRef;
+      else if (activeSection === "services") ref = servicesRef;
       else if (activeSection === "contact") ref = contactRef;
       else if (activeSection === "blog") ref = blogRef;
 
@@ -46,10 +44,10 @@ export function Header() {
       // Detect active section
       const sections = [
         "hero",
-        "about",
-        "skills",
+        "hero",
         "experience",
         "work",
+        "services",
         "blog",
         "contact",
       ];
@@ -151,19 +149,6 @@ export function Header() {
                   </span>
                 </button>
                 <button
-                  ref={skillsRef}
-                  onClick={() => scrollToSection("skills")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
-                >
-                  <span
-                    className={`font-medium transition-colors duration-300 ${
-                      activeSection === "skills" ? "text-white" : ""
-                    }`}
-                  >
-                    Skills
-                  </span>
-                </button>
-                <button
                   ref={workRef}
                   onClick={() => scrollToSection("work")}
                   className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
@@ -177,16 +162,16 @@ export function Header() {
                   </span>
                 </button>
                 <button
-                  ref={aboutRef}
-                  onClick={() => scrollToSection("about")}
+                  ref={servicesRef}
+                  onClick={() => scrollToSection("services")}
                   className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
                 >
                   <span
                     className={`font-medium transition-colors duration-300 ${
-                      activeSection === "about" ? "text-white" : ""
+                      activeSection === "services" ? "text-white" : ""
                     }`}
                   >
-                    My Story
+                    Services
                   </span>
                 </button>
                 <button
@@ -202,19 +187,6 @@ export function Header() {
                     Blog
                   </span>
                 </button>
-                <button
-                  ref={contactRef}
-                  onClick={() => scrollToSection("contact")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
-                >
-                  <span
-                    className={`font-medium transition-colors duration-300 ${
-                      activeSection === "contact" ? "text-white" : ""
-                    }`}
-                  >
-                    Contact
-                  </span>
-                </button>
               </motion.div>
             </div>
 
@@ -227,18 +199,14 @@ export function Header() {
               <Button
                 variant="outline"
                 size="sm"
-                className="text-xs xl:text-sm border-white/40 hover:border-white/80"
-                asChild
+                className="text-white px-3 py-1.5 xl:px-4 xl:py-2 rounded-md text-xs xl:text-sm font-semibold flex items-center gap-2 bg-transparent border border-white hover:bg-white hover:text-slate-950 transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+                style={{ minHeight: "36px", maxHeight: "36px" }}
+                onClick={() => scrollToSection("contact")}
               >
-                <a
-                  href="/cv/Jabez_Samson_Resume.pdf"
-                  download="Jabez_Samson_CV.pdf"
-                  className="flex items-center gap-2"
-                  style={{ minHeight: "36px", maxHeight: "36px" }}
-                >
-                  Download CV
+                <span className="flex items-center gap-2">
+                  Hire Me
                   <motion.div
-                    animate={{ y: [0, -3, 0] }}
+                    animate={{ x: [0, 3, 0] }}
                     transition={{
                       duration: 1.5,
                       repeat: Infinity,
@@ -246,9 +214,9 @@ export function Header() {
                     }}
                     className="inline-block"
                   >
-                    <ArrowDownToLine className="h-4 w-4" />
+                    <ArrowDownToLine className="h-4 w-4 -rotate-90" />
                   </motion.div>
-                </a>
+                </span>
               </Button>
               <a
                 href="https://www.linkedin.com/in/jabezsamson/"
