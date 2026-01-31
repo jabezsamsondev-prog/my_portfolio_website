@@ -1,5 +1,6 @@
 import { Button } from "../ui/Button";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowDownToLine } from "lucide-react";
 import {
   SiMongodb,
@@ -16,6 +17,23 @@ export function Hero() {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const titles = [
+    "Front-end Engineer",
+    "Product Consultant",
+    "Technical Writer",
+    "Digital Experience Architect",
+    "Tech Innovator",
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % titles.length);
+    }, 3000); // Change every 3 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -207,15 +225,26 @@ export function Hero() {
               >
                 HELLO, I'M JABEZ SAMSON
               </motion.h2>
-              <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-6xl font-extrabold mb-3 leading-tight text-foreground drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                Frontend{" "}
-                <span
-                  className="bg-gradient-to-r from-primary via-purple-500 to-accent bg-clip-text text-transparent font-extrabold animate-gradient filter drop-shadow-[0_0_30px_rgba(99,102,241,0.5)]"
-                  style={{ backgroundSize: "200% auto" }}
-                >
-                  Developer
-                </span>
-              </h1>
+              <div className="h-16 sm:h-20 md:h-24 lg:h-16 xl:h-16 overflow-hidden mb-2 sm:mb-4 lg:mb-6">
+                <AnimatePresence mode="wait">
+                  <motion.h1
+                    key={titles[index]}
+                    initial={{ y: 40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -40, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="text-2xl sm:text-4xl md:text-[2.75rem] lg:text-5xl xl:text-5xl font-extrabold leading-tight text-foreground drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
+                  >
+                    {titles[index].split(" ")[0]}{" "}
+                    <span
+                      className="bg-gradient-to-r from-primary via-purple-500 to-accent bg-clip-text text-transparent font-extrabold animate-gradient filter drop-shadow-[0_0_30px_rgba(99,102,241,0.5)]"
+                      style={{ backgroundSize: "200% auto" }}
+                    >
+                      {titles[index].split(" ").slice(1).join(" ")}
+                    </span>
+                  </motion.h1>
+                </AnimatePresence>
+              </div>
               <div className="flex gap-3 my-5 justify-center items-center lg:justify-start">
                 <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black font-semibold shadow-md text-sm tracking-wide">
                   JavaScript

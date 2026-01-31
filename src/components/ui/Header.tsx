@@ -44,10 +44,13 @@ export function Header() {
       // Detect active section
       const sections = [
         "hero",
-        "hero",
         "experience",
         "work",
         "services",
+        "skills",
+        "highlights",
+        "about",
+        "inspiration",
         "blog",
         "contact",
       ];
@@ -126,7 +129,14 @@ export function Header() {
                   animate={{
                     left: indicatorStyle.left,
                     width: indicatorStyle.width,
-                    opacity: activeSection === "hero" ? 0 : 1,
+                    opacity: [
+                      "experience",
+                      "work",
+                      "services",
+                      "blog",
+                    ].includes(activeSection)
+                      ? 1
+                      : 0,
                   }}
                   transition={{
                     type: "spring",
@@ -199,7 +209,11 @@ export function Header() {
               <Button
                 variant="outline"
                 size="sm"
-                className="text-white px-3 py-1.5 xl:px-4 xl:py-2 rounded-md text-xs xl:text-sm font-semibold flex items-center gap-2 bg-transparent border border-white hover:bg-white hover:text-slate-950 transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+                className={`px-3 py-1.5 xl:px-4 xl:py-2 rounded-md text-xs xl:text-sm font-semibold flex items-center gap-2 border border-white transition-all duration-300 ${
+                  activeSection === "contact"
+                    ? "bg-white text-slate-950 shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+                    : "text-white bg-transparent hover:bg-white hover:text-slate-950 shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+                }`}
                 style={{ minHeight: "36px", maxHeight: "36px" }}
                 onClick={() => scrollToSection("contact")}
               >
