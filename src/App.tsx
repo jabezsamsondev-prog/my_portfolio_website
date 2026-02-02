@@ -21,12 +21,12 @@ function App() {
       <Hero />
       <Experience />
       <Work />
-      <Services />
       <Skills />
-      <Highlights />
+      <Services />
+      <BlogSection />
       <About />
       <Inspiration />
-      <BlogSection />
+      <Highlights />
       <Contact />
       <FloatingWhatsApp />
       <ScrollToTop />
@@ -58,12 +58,12 @@ function App() {
             {/* Quick Links - Right */}
             <div className="text-center md:text-right">
               <h4 className="text-sm font-semibold mb-4 text-foreground">Quick Links</h4>
-              <nav className="space-y-3">
+              <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:flex-col md:items-end md:gap-2">
                 <a 
                   href="https://www.linkedin.com/in/jabezsamson/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block text-sm text-muted-foreground hover:text-blue-400 transition-colors"
+                  className="text-sm text-muted-foreground hover:text-blue-400 transition-colors"
                 >
                   LinkedIn
                 </a>
@@ -71,7 +71,7 @@ function App() {
                   href="/cv/Jabez_Samson_Resume.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block text-sm text-muted-foreground hover:text-purple-300 transition-colors"
+                  className="text-sm text-muted-foreground hover:text-purple-300 transition-colors"
                 >
                   Download CV
                 </a>
@@ -81,7 +81,7 @@ function App() {
                     e.preventDefault();
                     document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="block text-sm text-muted-foreground hover:text-purple-300 transition-colors cursor-pointer"
+                  className="text-sm text-muted-foreground hover:text-purple-300 transition-colors cursor-pointer"
                 >
                   Projects
                 </a>
@@ -91,7 +91,7 @@ function App() {
                     e.preventDefault();
                     document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="block text-sm text-muted-foreground hover:text-purple-300 transition-colors cursor-pointer"
+                  className="text-sm text-muted-foreground hover:text-purple-300 transition-colors cursor-pointer"
                 >
                   Services
                 </a>
@@ -101,7 +101,7 @@ function App() {
                     e.preventDefault();
                     document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="block text-sm text-muted-foreground hover:text-purple-300 transition-colors cursor-pointer"
+                  className="text-sm text-muted-foreground hover:text-purple-300 transition-colors cursor-pointer"
                 >
                   Experience
                 </a>

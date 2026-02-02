@@ -63,6 +63,12 @@ export function SidebarMenu({
                 Projects
               </button>
               <button
+                onClick={() => scrollToSection("skills")}
+                className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
+              >
+                Skills
+              </button>
+              <button
                 onClick={() => scrollToSection("services")}
                 className="text-left text-foreground hover:text-primary transition-colors py-2 cursor-pointer"
               >
@@ -80,7 +86,7 @@ export function SidebarMenu({
                   className="flex items-center justify-center gap-2 px-4 py-2 bg-transparent text-white border border-white hover:bg-white hover:text-slate-950 rounded-md transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] text-sm font-semibold"
                 >
                   <ArrowDownToLine className="h-4 w-4 -rotate-90" />
-                  Hire Me
+                  Contact
                 </button>
                 <a
                   href="https://www.linkedin.com/in/jabezsamsondev-prog/"

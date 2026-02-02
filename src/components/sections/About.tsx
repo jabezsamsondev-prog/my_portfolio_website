@@ -4,7 +4,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24"
+      className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 bg-background"
     >
       {/* Animated Wave Background */}
       <div className="absolute inset-0 pointer-events-none z-0 hidden sm:block">
@@ -90,10 +90,10 @@ export function About() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-[32px] font-bold mb-4">
-              Ready to read my story?
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">
+              All About Me
             </h2>
-            <div className="h-1 w-20 bg-accent rounded-full mx-auto" />
+            <div className="h-1.5 w-24 bg-gradient-to-r from-primary via-purple-400 to-secondary rounded-full mx-auto mb-6 animate-gradient bg-[length:200%_auto]" />
           </motion.div>
 
           <div className="space-y-6">

@@ -92,15 +92,16 @@ export function BlogSection() {
       className="relative py-16 md:py-20 lg:py-24 bg-background"
     >
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-[32px] font-bold mb-4"
+          className="text-center text-2xl sm:text-3xl md:text-5xl font-bold mb-6 text-foreground"
         >
           Latest Blog Posts
         </motion.h2>
-        <div className="h-1 w-20 bg-accent rounded-full mx-auto mb-10" />
+        <div className="h-1.5 w-24 bg-gradient-to-r from-primary via-purple-400 to-secondary rounded-full mx-auto mb-16 animate-gradient bg-[length:200%_auto]" />
         <div className="relative w-full flex justify-center items-center">
           <div className="w-full sm:w-[80%] mx-auto relative flex min-h-[1px]">
             <Swiper

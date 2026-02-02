@@ -11,13 +11,24 @@ import { Button } from "../ui/Button";
 import { Github, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import swiftSteeds from "../../assets/projects/swiftsteeds.png";
+import familiCloud from "../../assets/projects/famili_cloud.png";
+import lmsMockup from "../../assets/projects/lms_mockup.png";
+import seniorCareCrm from "../../assets/projects/senior_care_crm.png";
+import graniteEcommerce from "../../assets/projects/granite_ecommerce.png";
+import fish2Shark from "../../assets/projects/proj_6.png";
+import neonCipher from "../../assets/projects/proj_5.png";
+import ballChase from "../../assets/projects/proj_1.png";
+import whacAMole from "../../assets/projects/proj_2.png";
+import rockPaperScissors from "../../assets/projects/proj_3.png";
+import ticTacToe from "../../assets/projects/proj_4.png";
 
 const projects = [
   {
     title: "Swift Steeds Trading & Consultancy",
     description:
       "Complete end-to-end marketing and advertising website for a Indian trading company. Features responsive design, integrated contact forms, service showcases and client testimonials with modern UI/UX.",
-    image: "/images/projects/swiftsteeds.png",
+    image: swiftSteeds,
     tags: ["JavaScript", "Responsive Design"],
     github: "#",
     demo: "https://www.swiftsteeds.com/",
@@ -29,7 +40,7 @@ const projects = [
     title: "Famili Cloud",
     description:
       "Famili Cloud is where your family's memories, stories, and connections live forever — beautifully organized, completely private, and always accessible. A digital sanctuary for preserving family legacy across generations.",
-    image: "../images/projects/famili_cloud.png",
+    image: familiCloud,
     tags: ["React", "JavaScript", "Firebase", "Design"],
     github: "#",
     demo: "https://www.famili.cloud/",
@@ -41,7 +52,7 @@ const projects = [
     title: "Learning Management System",
     description:
       "A modern educational platform designed for skill development in Logistics and Supply Chain Management. Features course management, interactive learning modules, and progress tracking for students and educators.",
-    image: "../images/projects/lms_mockup.png",
+    image: lmsMockup,
     tags: ["LMS Setup", "Moodle", "JavaScript", "Design"],
     github: "#",
     demo: "https://edc.lsc-india.org/",
@@ -53,7 +64,7 @@ const projects = [
     title: "Care Platform - All in one CRM",
     description:
       "A comprehensive care management platform designed for a care agency in the UK. Features caregiver scheduling, shop management, training courses and a dedicated chat application.",
-    image: "../images/projects/senior_care_crm.png",
+    image: seniorCareCrm,
     tags: ["React", "JavaScript", "Node", "Enterprise CRM"],
     github: "#",
     demo: "#",
@@ -65,7 +76,7 @@ const projects = [
     title: "Premium E-commerce Application",
     description:
       "A high-end e-commerce solution for a premier granite and stone supplier. Showcases premium slab galleries, project inspiration, and a sophisticated product catalog for luxury surfaces.",
-    image: "../images/projects/granite_ecommerce.png",
+    image: graniteEcommerce,
     tags: ["React", "JavaScript", "Node", "Stripe"],
     github: "#",
     demo: "#",
@@ -77,7 +88,7 @@ const projects = [
     title: "Fish2Shark Website for Client",
     description:
       "Complete end-to-end marketing and advertising website for a Canadian marketing agency. Features responsive design, integrated contact forms, service showcases and client testimonials with modern UI/UX.",
-    image: "../images/projects/proj_6.png",
+    image: fish2Shark,
     tags: ["React", "Responsive Design", "JavaScript"],
     github: "https://github.com/jabezsamsondev-prog/fish2shark_website",
     demo: "https://www.fish2shark.com/",
@@ -98,10 +109,21 @@ const projects = [
     hidden: true,
   },
   {
+    title: "Neon Cipher",
+    description:
+      "A futuristic number guessing game wrapped in a neon cyberpunk aesthetic. Test your logic with difficulty levels, limited chances, and immersive audio feedback.",
+    image: neonCipher,
+    tags: ["JavaScript", "Game Logic", "CSS3"],
+    github: "https://github.com/jabezsamsondev-prog/guessing_game",
+    demo: "https://neon-cipher-38ac2.firebaseapp.com/",
+    category: "Games",
+    order: 45,
+  },
+  {
     title: "Ball Chase Challenge",
     description:
       "An interactive JavaScript game where players control a ball to chase targets while avoiding obstacles. Features smooth animations and score tracking.",
-    image: "../images/projects/proj_1.png",
+    image: ballChase,
     tags: ["JavaScript", "Canvas API", "Game Logic"],
     github: "https://github.com/jabezsamsondev-prog/ball_chase_challenge.git",
     demo: "https://ball-chase-188ee.firebaseapp.com/",
@@ -112,7 +134,7 @@ const projects = [
     title: "Whac-a-Mole",
     description:
       "Classic arcade-style game built with vanilla JavaScript. Test your reflexes by clicking moles as they randomly appear. Includes difficulty levels and high score system.",
-    image: "../images/projects/proj_2.png",
+    image: whacAMole,
     tags: ["HTML5", "CSS3", "JavaScript"],
     github: "https://github.com/jabezsamsondev-prog/whac-a-mole.git",
     demo: "https://fun-mole-game.firebaseapp.com/",
@@ -123,7 +145,7 @@ const projects = [
     title: "Rock Paper Scissors",
     description:
       "Interactive game implementation with computer AI opponent. Features animated hand gestures, round tracking and responsive design for all devices.",
-    image: "../images/projects/proj_3.png",
+    image: rockPaperScissors,
     tags: ["JavaScript", "DOM", "Game Logic"],
     github: "https://github.com/jabezsamsondev-prog/rock-paper-scissors",
     demo: "https://rock-paper-scissors-cd587.firebaseapp.com/",
@@ -134,7 +156,7 @@ const projects = [
     title: "Tic Tac Toe",
     description:
       "Classic strategy game with intelligent AI opponent using minimax algorithm. Clean UI, move history tracking and winner detection logic.",
-    image: "../images/projects/proj_4.png",
+    image: ticTacToe,
     tags: ["JavaScript", "DOM", "Game Logic"],
     github: "https://github.com/jabezsamsondev-prog/modern-tic-tac-toe",
     demo: "https://tic-tac-toe-8c50e.firebaseapp.com/",
@@ -161,7 +183,7 @@ export function Work() {
   return (
     <section
       id="work"
-      className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden bg-secondary/30"
     >
       {/* Game-themed background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
@@ -181,8 +203,8 @@ export function Work() {
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-12 text-center md:text-left">
-            <h2 className="text-[32px] font-bold mb-4">Latest Work</h2>
-            <div className="h-1 w-20 bg-accent rounded-full mx-auto md:mx-0" />
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">Latest Projects</h2>
+            <div className="h-1.5 w-24 bg-gradient-to-r from-primary via-purple-400 to-secondary rounded-full mx-auto md:mx-0 mb-6 animate-gradient bg-[length:200%_auto]" />
           </div>
 
           {/* Tabs */}
@@ -249,7 +271,11 @@ export function Work() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full"
+                      className={`w-full transition-all duration-300 ${
+                        project.github !== "#"
+                          ? "hover:bg-gradient-to-r hover:from-primary hover:via-accent hover:to-purple-500 hover:text-white hover:border-white"
+                          : "opacity-60 bg-secondary/10"
+                      }`}
                       asChild
                       disabled={project.github === "#"}
                     >
@@ -269,7 +295,11 @@ export function Work() {
                     </Button>
                     <Button
                       size="sm"
-                      className="w-full"
+                      className={`w-full font-semibold transition-all ${
+                        project.demo !== "#"
+                          ? "bg-gradient-to-r from-primary via-accent to-purple-500 text-white shadow-lg border-0 hover:brightness-110 hover:saturate-150"
+                          : "bg-secondary/20 text-muted-foreground border border-primary/10 shadow-none opacity-70"
+                      }`}
                       asChild
                       disabled={project.demo === "#"}
                     >

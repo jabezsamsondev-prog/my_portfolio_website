@@ -74,18 +74,7 @@ export function Services() {
   ];
 
   return (
-    <Section id="services" className="relative bg-secondary/30 overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <div
-          className="absolute top-0 left-0 w-full h-full"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)`,
-            backgroundSize: "40px 40px",
-          }}
-        />
-      </div>
-
+    <Section id="services" className="relative bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -93,10 +82,10 @@ export function Services() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-[32px] font-bold mb-4">Services</h2>
-          <div className="h-1 w-20 bg-accent rounded-full mx-auto" />
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-xs md:text-sm">
-            Comprehensive solutions to bring your digital vision to life
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">My Services</h2>
+          <div className="h-1.5 w-24 bg-gradient-to-r from-primary via-purple-400 to-secondary rounded-full mx-auto mb-6 animate-gradient bg-[length:200%_auto]" />
+          <p className="text-muted-foreground mt-4 max-w-3xl mx-auto text-sm md:text-lg leading-relaxed">
+            From full-stack engineering and AI integration to strategic technical consulting, I deliver comprehensive digital solutions to build and scale your vision.
           </p>
         </motion.div>
 

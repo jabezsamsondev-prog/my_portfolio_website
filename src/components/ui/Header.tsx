@@ -13,6 +13,7 @@ export function Header() {
 
   const experienceRef = useRef<HTMLButtonElement>(null);
   const workRef = useRef<HTMLButtonElement>(null);
+  const skillsRef = useRef<HTMLButtonElement>(null);
   const servicesRef = useRef<HTMLButtonElement>(null);
   const contactRef = useRef<HTMLButtonElement>(null);
   const blogRef = useRef<HTMLButtonElement>(null);
@@ -22,6 +23,7 @@ export function Header() {
       let ref;
       if (activeSection === "experience") ref = experienceRef;
       else if (activeSection === "work") ref = workRef;
+      else if (activeSection === "skills") ref = skillsRef;
       else if (activeSection === "services") ref = servicesRef;
       else if (activeSection === "contact") ref = contactRef;
       else if (activeSection === "blog") ref = blogRef;
@@ -132,6 +134,7 @@ export function Header() {
                     opacity: [
                       "experience",
                       "work",
+                      "skills",
                       "services",
                       "blog",
                     ].includes(activeSection)
@@ -169,6 +172,19 @@ export function Header() {
                     }`}
                   >
                     Projects
+                  </span>
+                </button>
+                <button
+                  ref={skillsRef}
+                  onClick={() => scrollToSection("skills")}
+                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
+                >
+                  <span
+                    className={`font-medium transition-colors duration-300 ${
+                      activeSection === "skills" ? "text-white" : ""
+                    }`}
+                  >
+                    Skills
                   </span>
                 </button>
                 <button
@@ -218,7 +234,7 @@ export function Header() {
                 onClick={() => scrollToSection("contact")}
               >
                 <span className="flex items-center gap-2">
-                  Hire Me
+                  Contact
                   <motion.div
                     animate={{ x: [0, 3, 0] }}
                     transition={{

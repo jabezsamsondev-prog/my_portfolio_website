@@ -188,7 +188,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-background to-secondary/20"
+      className="relative overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 bg-background"
     >
       {/* Animated Wave Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -342,9 +342,9 @@ export function Contact() {
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="mb-12 text-center">
-          <h2 className="text-[32px] font-bold mb-4">Get In Touch</h2>
-          <div className="h-1 w-20 bg-primary rounded-full mx-auto" />
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm md:text-base px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+          <div className="h-1.5 w-24 bg-gradient-to-r from-primary via-purple-400 to-secondary rounded-full mx-auto mb-6 animate-gradient bg-[length:200%_auto]" />
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm md:text-lg leading-relaxed px-4">
             Have a project in mind or just want to say hi? I'm always open to
             discussing new projects, creative ideas or opportunities to be part
             of your visions.

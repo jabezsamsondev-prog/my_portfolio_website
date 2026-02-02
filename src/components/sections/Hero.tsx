@@ -19,11 +19,11 @@ export function Hero() {
   };
 
   const titles = [
-    "Front-end Engineer",
+    "Software Engineer",
     "Product Consultant",
+    "Digital Architect",
+    "Tech Enthusiast",
     "Technical Writer",
-    "Digital Experience Architect",
-    "Tech Innovator",
   ];
 
   const [index, setIndex] = useState(0);
@@ -215,7 +215,7 @@ export function Hero() {
               className="text-center lg:text-left relative z-20 flex-shrink-0 w-full lg:order-1 lg:flex-1 pt-12 sm:pt-16 lg:pt-0 mb-6"
             >
               <motion.h2
-                className="font-bold mb-4 text-sm sm:text-base md:text-base lg:text-lg uppercase bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent animate-gradient drop-shadow-[0_2px_8px_rgba(168,85,247,0.8)]"
+                className="font-bold mb-4 text-base sm:text-lg md:text-xl lg:text-[22px] uppercase bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent animate-gradient drop-shadow-[0_2px_8px_rgba(168,85,247,0.8)]"
                 style={{
                   letterSpacing: "0.07em",
                   backgroundSize: "200% auto",
@@ -233,7 +233,7 @@ export function Hero() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -40, opacity: 0 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="text-2xl sm:text-4xl md:text-[2.75rem] lg:text-5xl xl:text-5xl font-extrabold leading-tight text-foreground drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
+                    className="text-[26px] sm:text-[38px] md:text-[46px] lg:text-[50px] xl:text-[50px] font-extrabold leading-tight text-foreground drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
                   >
                     {titles[index].split(" ")[0]}{" "}
                     <span
@@ -245,15 +245,15 @@ export function Hero() {
                   </motion.h1>
                 </AnimatePresence>
               </div>
-              <div className="flex gap-3 my-5 justify-center items-center lg:justify-start">
+              {/* <div className="flex gap-3 my-5 justify-center items-center lg:justify-start">
                 <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black font-semibold shadow-md text-sm tracking-wide">
                   JavaScript
                 </span>
                 <span className="inline-block px-4 py-1 rounded-full bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 text-white font-semibold shadow-md text-sm tracking-wide">
                   React
                 </span>
-              </div>
-              <p className="text-dark text-xs sm:text-sm md:text-sm lg:text-sm mb-8 max-w-lg leading-loose mx-auto lg:mx-0">
+              </div> */}
+              <p className="text-dark text-base mb-8 max-w-lg leading-loose mx-auto lg:mx-0">
                 A self-taught professional with 8+ years of experience crafting
                 modern, intuitive and visually striking web experiences and
                 ecosystems that are fast, responsive and reliable — built with

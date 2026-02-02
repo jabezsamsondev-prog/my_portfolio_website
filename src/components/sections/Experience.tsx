@@ -8,7 +8,8 @@ import {
 import { Section } from "../ui/Section";
 import { Badge } from "../ui/Badge";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Briefcase, Check } from "lucide-react";
+import { Briefcase, Check, Award } from "lucide-react";
+import { SiQuora, SiGithub } from "react-icons/si";
 import { useRef } from "react";
 
 const experiences = [
@@ -68,6 +69,43 @@ const experiences = [
   },
 ];
 
+const accolades = [
+  {
+    icon: Briefcase,
+    value: "Ex-Tech Mentor",
+    label: "Rethink Passion",
+    description: "Guided aspiring developers in their learning journey",
+    color: "from-primary/20 to-accent/20",
+    iconColor: "text-primary",
+  },
+  {
+    icon: Award,
+    value: "Ex-Intern",
+    label: "Google Device Lab",
+    description: "A hands-on workshop exploring Entrepreneurship",
+    color: "from-accent/20 to-purple-500/20",
+    iconColor: "text-accent",
+  },
+  {
+    icon: SiQuora,
+    value: "6,47,000+",
+    label: "Content Views",
+    platform: "My answers on Quora have gotten attention",
+    color: "from-red-500/20 to-orange-500/20",
+    iconColor: "text-red-400",
+  },
+  {
+    icon: SiGithub,
+    value: "10+",
+    label: "Open-Source Contributions",
+    description:
+      "Active contributor in open source projects on GitHub, Stack Overflow and Quora",
+    color: "from-gray-500/20 to-slate-500/20",
+    iconColor: "text-gray-300",
+    link: "https://stackoverflow.com/users/9132170/jabez-samson",
+  },
+];
+
 export function Experience() {
   const timelineRef = useRef<HTMLDivElement>(null);
 
@@ -83,13 +121,13 @@ export function Experience() {
   });
 
   return (
-    <Section id="experience" className="bg-secondary/30">
-      <div className="max-w-7xl mx-auto">
+    <Section id="experience" className="bg-background relative overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-12 text-center md:text-left">
-          <h2 className="text-[32px] font-bold mb-4">
-            Professional Experience
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">
+            Experience & Highlights
           </h2>
-          <div className="h-1 w-20 bg-accent rounded-full mx-auto md:mx-0" />
+          <div className="h-1.5 w-24 bg-gradient-to-r from-primary via-purple-400 to-secondary rounded-full mx-auto md:mx-0 mb-6 animate-gradient bg-[length:200%_auto]" />
         </div>
 
         {/* Timeline for desktop, stacked cards for mobile */}
@@ -196,6 +234,172 @@ export function Experience() {
               </motion.div>
             ))}
           </div>
+        </div>
+
+        {/* Accolades Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-16 md:mt-24">
+          {/* Tech Mentor */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0 }}
+            className="group relative overflow-hidden rounded-2xl border border-primary/10 bg-secondary/30 backdrop-blur-sm p-6 hover:border-primary/30 transition-all duration-300 md:col-span-1 lg:col-span-1"
+          >
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${accolades[0].color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+            />
+            <div className="relative z-10 flex flex-col justify-between">
+              <motion.div
+                className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${accolades[0].color} mb-4`}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              >
+                {(() => {
+                  const Icon = accolades[0].icon;
+                  return (
+                    <Icon className={`w-8 h-8 ${accolades[0].iconColor}`} />
+                  );
+                })()}
+              </motion.div>
+              <div>
+                <div className="text-xl md:text-2xl font-bold mb-3 bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">
+                  {accolades[0].value}
+                </div>
+                <p className="text-sm md:text-md font-semibold text-foreground/90 mb-2">
+                  {accolades[0].label}
+                </p>
+                <p className="text-xs text-muted-foreground/80">
+                  {accolades[0].description}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Google Intern */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="group relative overflow-hidden rounded-2xl border border-primary/10 bg-secondary/30 backdrop-blur-sm p-6 hover:border-primary/30 transition-all duration-300 md:col-span-1 lg:col-span-1"
+          >
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${accolades[1].color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+            />
+            <div className="relative z-10">
+              <motion.div
+                className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${accolades[1].color} mb-4`}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              >
+                {(() => {
+                  const Icon = accolades[1].icon;
+                  return (
+                    <Icon className={`w-8 h-8 ${accolades[1].iconColor}`} />
+                  );
+                })()}
+              </motion.div>
+              <div className="text-xl md:text-2xl font-bold mb-3 bg-gradient-to-r from-primary via-accent to-purple-500 bg-clip-text text-transparent">
+                {accolades[1].value}
+              </div>
+              <p className="text-sm md:text-md font-semibold text-foreground/90 mb-2">
+                {accolades[1].label}
+              </p>
+              <p className="text-xs text-muted-foreground/80">
+                {accolades[1].description}
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Quora Stats */}
+          <a
+            href="https://www.quora.com/profile/Jabez-Samson"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative overflow-hidden rounded-2xl border border-primary/10 bg-secondary/30 backdrop-blur-sm p-6 hover:border-primary/30 transition-all duration-300 md:col-span-2 lg:col-span-1 cursor-pointer"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${accolades[2].color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+              />
+              <div className="relative z-10 flex flex-col justify-between">
+                <motion.div
+                  className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${accolades[2].color} mb-4`}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  {(() => {
+                    const Icon = accolades[2].icon;
+                    return (
+                      <Icon
+                        className={`w-8 h-8 ${accolades[2].iconColor}`}
+                      />
+                    );
+                  })()}
+                </motion.div>
+                <div>
+                  <div className="text-xl md:text-2xl font-bold mb-3 text-red-500">
+                    {accolades[2].value}
+                  </div>
+                  <p className="text-sm md:text-md font-semibold text-foreground/90 mb-2">
+                    {accolades[2].label}
+                  </p>
+                  <p className="text-xs text-muted-foreground/80">
+                    {accolades[2].platform}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </a>
+
+          {/* Open Source Contribution */}
+          <a
+            href="https://github.com/jabezsamsondev-prog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative overflow-hidden rounded-2xl border border-primary/10 bg-secondary/30 backdrop-blur-sm p-6 hover:border-primary/30 transition-all duration-300 md:col-span-2 lg:col-span-1 cursor-pointer"
+          >
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${accolades[3].color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+            />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="relative z-10 flex flex-col justify-between h-full"
+            >
+              <motion.div
+                className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${accolades[3].color} mb-4`}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              >
+                {(() => {
+                  const Icon = accolades[3].icon;
+                  return (
+                    <Icon className={`w-8 h-8 ${accolades[3].iconColor}`} />
+                  );
+                })()}
+              </motion.div>
+              <div>
+                <div className="text-xl md:text-2xl font-bold mb-3 text-gray-300">
+                  {accolades[3].value}
+                </div>
+                <p className="text-sm md:text-md font-semibold text-foreground/90 mb-2">
+                  {accolades[3].label}
+                </p>
+                <p className="text-xs text-muted-foreground/80">
+                  {accolades[3].description}
+                </p>
+              </div>
+            </motion.div>
+          </a>
         </div>
       </div>
     </Section>
