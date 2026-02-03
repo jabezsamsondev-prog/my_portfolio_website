@@ -17,6 +17,7 @@ import lmsMockup from "../../assets/projects/lms_mockup.png";
 import seniorCareCrm from "../../assets/projects/senior_care_crm.png";
 import graniteEcommerce from "../../assets/projects/granite_ecommerce.png";
 import fish2Shark from "../../assets/projects/proj_6.png";
+import ChromaMatch from "../../assets/projects/proj_7.png";
 import neonCipher from "../../assets/projects/proj_5.png";
 import ballChase from "../../assets/projects/proj_1.png";
 import whacAMole from "../../assets/projects/proj_2.png";
@@ -107,6 +108,17 @@ const projects = [
     category: "Frontend",
     order: 50,
     hidden: true,
+  },
+  {
+    title: "Chroma Match",
+    description:
+      "A vibrant memory matching game that challenges your visual memory and pattern recognition skills. Features smooth animations, a sleek neon interface, and progressive difficulty levels to test your cognitive skills.",
+    image: ChromaMatch,
+    tags: ["JavaScript", "Game Logic", "CSS3"],
+    github: "https://github.com/jabezsamsondev-prog/chroma_match",
+    demo: "https://chroma-match-a5339.firebaseapp.com/",
+    category: "Games",
+    order: 48,
   },
   {
     title: "Neon Cipher",
