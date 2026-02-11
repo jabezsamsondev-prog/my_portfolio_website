@@ -12,6 +12,8 @@ import {
   SiCss3,
   SiGithub,
 } from "react-icons/si";
+import profileImg from "../../assets/images/profile.png";
+import cv from "../../assets/cv/Jabez_Samson_Resume.pdf";
 
 export function Hero() {
   const scrollToSection = (id: string) => {
@@ -193,7 +195,7 @@ export function Hero() {
 
           {/* Profile image */}
           <img
-            src="/images/profile.png"
+            src={profileImg}
             alt="Jabez Samson - Profile"
             className="block h-full w-auto object-contain object-bottom pointer-events-auto"
             style={{
@@ -285,7 +287,7 @@ export function Hero() {
                   asChild
                 >
                   <a
-                    href="/cv/Jabez_Samson_Resume.pdf"
+                    href={cv}
                     download="Jabez_Samson_CV.pdf"
                   >
                     Download CV
@@ -321,7 +323,7 @@ export function Hero() {
                 <div className="relative w-full">
                   {/* Profile image */}
                   <motion.img
-                    src="/images/profile.png"
+                    src={profileImg}
                     alt="Jabez Samson - Profile"
                     className="relative w-full h-auto object-contain object-bottom block"
                     style={{

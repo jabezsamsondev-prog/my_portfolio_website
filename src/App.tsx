@@ -12,6 +12,8 @@ import { ScrollToTop } from "./components/ui/ScrollToTop";
 import { Header } from "./components/ui/Header";
 import { CustomCursor } from "./components/ui/CustomCursor";
 import { BlogSection } from "./components/sections/Blog";
+import logo from "./assets/images/logo.svg";
+import cv from "./assets/cv/Jabez_Samson_Resume.pdf";
 
 function App() {
   return (
@@ -40,7 +42,7 @@ function App() {
               {/* Logo */}
               <div className="flex justify-center md:justify-start mb-4">
                 <img
-                  src="/images/logo.svg"
+                  src={logo}
                   alt="Logo"
                   className="h-12 w-auto"
                 />
@@ -68,7 +70,7 @@ function App() {
                   LinkedIn
                 </a>
                 <a 
-                  href="/cv/Jabez_Samson_Resume.pdf" 
+                  href={cv} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-purple-300 transition-colors"

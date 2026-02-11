@@ -20,7 +20,7 @@ export function CustomCursor() {
     <>
       {/* Large glowing gradient blob that follows cursor */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9997]"
+        className="hidden md:block fixed top-0 left-0 pointer-events-none z-[9997]"
         animate={{
           x: mousePosition.x - 150,
           y: mousePosition.y - 150,

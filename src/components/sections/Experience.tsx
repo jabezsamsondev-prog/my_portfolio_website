@@ -15,12 +15,22 @@ import { useRef } from "react";
 const experiences = [
   {
     company: "Devship Pvt. Ltd.",
-    role: "Senior Software Developer",
-    period: "2021 - Present",
-    description: [
-      "Led front-end development for a comprehensive CRM system, building an intuitive admin dashboard and client-facing features including training modules and e-commerce capabilities.",
-      "Collaborated with cross-functional teams to define project requirements, manage timelines and ensure the delivery of high-quality, scalable code.",
-      "Built few other full-fledged web applications involving features like Inventory Management, E-Commerce and Financial Review.",
+    roles: [
+      {
+        role: "Senior Software Developer",
+        period: "2022 - Present",
+        description: [
+          "Led front-end development for a comprehensive CRM system, building an intuitive admin dashboard and client-facing features including training modules and e-commerce capabilities.",
+          "Collaborated with cross-functional teams to define project requirements, manage timelines and ensure the delivery of high-quality, scalable code.",
+        ],
+      },
+      {
+        role: "Software Developer",
+        period: "2021 - 2022",
+        description: [
+          "Built few other full-fledged web applications involving features like Inventory Management, E-Commerce and Financial Review.",
+        ],
+      },
     ],
     skills: [
       "JavaScript",
@@ -33,7 +43,7 @@ const experiences = [
   },
   {
     company: "Logistics Sector Skill Council",
-    role: "Web Developer",
+    role: "Front-end Web Developer",
     period: "2018 - 2021",
     description: [
       "Spearheaded end-to-end development and delivery of Learning Management Systems (LMSs), from requirement gathering to deployment and post-launch support.",
@@ -48,19 +58,10 @@ const experiences = [
       "Server Administration",
     ],
   },
-  {
-    company: "Ellipticals Networks Labs",
-    role: "Product Manager",
-    period: "2018",
-    description: [
-      "Directed and coordinated the product delivery team to launch a real-money gaming app.",
-      "Managed the monitoring of the game 24/7, the game master dashboard, curated the payouts enabling technical support.",
-    ],
-    skills: ["JavaScript", "Game Management", "Product Management"],
-  },
+
   {
     company: "Evansys Technologies",
-    role: "Technical Head",
+    role: "Front-end Web Developer",
     period: "2017 - 2018",
     description: [
       "Developed and managed websites for clients from educational institutions starting from conception to deployment followed by post-launch support and maintenance.",
@@ -125,7 +126,7 @@ export function Experience() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-12 text-center md:text-left">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">
-            Experience & Highlights
+            Work Experience
           </h2>
           <div className="h-1.5 w-24 bg-gradient-to-r from-primary via-purple-400 to-secondary rounded-full mx-auto md:mx-0 mb-6 animate-gradient bg-[length:200%_auto]" />
         </div>
@@ -152,7 +153,7 @@ export function Experience() {
           />
 
           <div className="space-y-8 md:space-y-12">
-            {experiences.map((exp, index) => (
+            {experiences.map((exp: any, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -197,29 +198,83 @@ export function Experience() {
                   } hover:border-primary ml-0 md:ml-12 lg:ml-0 transition-colors duration-200`}
                 >
                   <CardHeader>
-                    <div className="flex flex-row justify-between items-center gap-4 mb-1">
-                      <CardTitle className="text-base md:text-lg flex-1 primary">
-                        {exp.role}
-                      </CardTitle>
-                      <Badge variant="secondary" className="flex-shrink-0">
-                        {exp.period}
-                      </Badge>
-                    </div>
-                    <CardDescription className="text-sm text-white/50 md:text-sm font-medium">
-                      {exp.company}
-                    </CardDescription>
+                    {exp.roles ? (
+                      // Rendering for multiple roles (Promoted Post style)
+                      <div>
+                        <CardDescription className="text-sm text-white/50 md:text-sm font-medium mb-4">
+                          {exp.company}
+                        </CardDescription>
+                        {/* Removed border-l-2 from container to control line manually */}
+                        <div className="relative ml-1 space-y-6">
+                          {exp.roles.map((role: any, rIndex: number) => (
+                            <div key={rIndex} className="relative pl-6">
+                              {/* Connecting Line (only for non-last items) */}
+                              {rIndex !== exp.roles.length - 1 && (
+                                <div className="absolute left-0 top-2 -bottom-8 w-0.5 bg-white/10" />
+                              )}
+                              
+                              {/* Dot for role - Adjusted alignment (-left-1) */}
+                              <div className="absolute -left-1 top-2 w-2.5 h-2.5 rounded-full bg-accent ring-4 ring-background" />
+
+                              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-2">
+                                <CardTitle className="text-base md:text-lg text-white">
+                                  {role.role}
+                                </CardTitle>
+                                <Badge variant="secondary" className="w-fit text-xs">
+                                  {role.period}
+                                </Badge>
+                              </div>
+
+                              <div className="text-white/90 text-xs md:text-sm leading-loose">
+                                {role.description.map(
+                                  (point: string, pIndex: number) => (
+                                    <div
+                                      key={pIndex}
+                                      className="flex items-start gap-2 mb-1.5"
+                                    >
+                                      <Check className="w-3.5 h-3.5 text-accent mt-1.5 flex-shrink-0" />
+                                      <span>{point}</span>
+                                    </div>
+                                  )
+                                )}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      // Standard single role rendering
+                      <>
+                        <div className="flex flex-row justify-between items-center gap-4 mb-1">
+                          <CardTitle className="text-base md:text-lg flex-1 primary">
+                            {exp.role}
+                          </CardTitle>
+                          <Badge variant="secondary" className="flex-shrink-0">
+                            {exp.period}
+                          </Badge>
+                        </div>
+                        <CardDescription className="text-sm text-white/50 md:text-sm font-medium">
+                          {exp.company}
+                        </CardDescription>
+                      </>
+                    )}
                   </CardHeader>
                   <CardContent>
-                    <div className="text-white/90 mb-8 text-xs md:text-sm leading-loose">
-                      {exp.description.map((point, pointIndex) => (
-                        <div key={pointIndex} className="flex items-start gap-2 mb-2">
-                          <Check className="w-4 h-4 text-accent mt-2 flex-shrink-0" />
-                          <span>{point}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="flex gap-2 flex-wrap">
-                      {exp.skills.map((skill) => (
+                    {!exp.roles && (
+                      <div className="text-white/90 mb-8 text-xs md:text-sm leading-loose">
+                        {exp.description.map((point: string, pointIndex: number) => (
+                          <div
+                            key={pointIndex}
+                            className="flex items-start gap-2 mb-2"
+                          >
+                            <Check className="w-4 h-4 text-accent mt-2 flex-shrink-0" />
+                            <span>{point}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    <div className="flex gap-2 flex-wrap mt-4">
+                      {exp.skills.map((skill: string) => (
                         <Badge
                           key={skill}
                           variant="outline"
@@ -237,7 +292,13 @@ export function Experience() {
         </div>
 
         {/* Accolades Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-16 md:mt-24">
+        <div className="mb-8 text-center md:text-left mt-16 md:mt-24">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
+            Career Highlights
+          </h3>
+          <div className="h-1.5 w-16 bg-gradient-to-r from-primary via-purple-400 to-secondary rounded-full mx-auto md:mx-0 animate-gradient bg-[length:200%_auto]" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {/* Tech Mentor */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -337,9 +398,7 @@ export function Experience() {
                   {(() => {
                     const Icon = accolades[2].icon;
                     return (
-                      <Icon
-                        className={`w-8 h-8 ${accolades[2].iconColor}`}
-                      />
+                      <Icon className={`w-8 h-8 ${accolades[2].iconColor}`} />
                     );
                   })()}
                 </motion.div>

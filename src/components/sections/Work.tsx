@@ -8,7 +8,7 @@ import {
 } from "../ui/Card";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Gamepad2, Lock, Ban } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import swiftSteeds from "../../assets/projects/swiftsteeds.png";
@@ -301,7 +301,7 @@ export function Work() {
                         </a>
                       ) : (
                         <span className="flex items-center text-muted-foreground cursor-not-allowed">
-                          <Github className="mr-2 h-4 w-4" /> Confidential
+                          <Lock className="mr-2 h-4 w-4" /> Confidential
                         </span>
                       )}
                     </Button>
@@ -321,12 +321,19 @@ export function Work() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <ExternalLink className="mr-2 h-4 w-4" /> Demo
+                          {project.category === "Games" ? (
+                            <>
+                              <Gamepad2 className="mr-2 h-4 w-4" /> Play Now
+                            </>
+                          ) : (
+                            <>
+                              <ExternalLink className="mr-2 h-4 w-4" /> Demo
+                            </>
+                          )}
                         </a>
                       ) : (
                         <span className="flex items-center cursor-not-allowed opacity-80">
-                          <ExternalLink className="mr-2 h-4 w-4" /> Internal
-                          Only
+                          <Ban className="mr-2 h-4 w-4" /> Internal Only
                         </span>
                       )}
                     </Button>

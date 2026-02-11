@@ -2,42 +2,14 @@ import { Button } from "./Button";
 import { motion } from "framer-motion";
 import { Menu, ArrowDownToLine } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa6";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { SidebarMenu } from "./SidebarMenu";
+import logo from "../../assets/images/logo.svg";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
-  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
-
-  const experienceRef = useRef<HTMLButtonElement>(null);
-  const workRef = useRef<HTMLButtonElement>(null);
-  const skillsRef = useRef<HTMLButtonElement>(null);
-  const servicesRef = useRef<HTMLButtonElement>(null);
-  const contactRef = useRef<HTMLButtonElement>(null);
-  const blogRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    const updateIndicator = () => {
-      let ref;
-      if (activeSection === "experience") ref = experienceRef;
-      else if (activeSection === "work") ref = workRef;
-      else if (activeSection === "skills") ref = skillsRef;
-      else if (activeSection === "services") ref = servicesRef;
-      else if (activeSection === "contact") ref = contactRef;
-      else if (activeSection === "blog") ref = blogRef;
-
-      if (ref?.current) {
-        setIndicatorStyle({
-          left: ref.current.offsetLeft,
-          width: ref.current.offsetWidth,
-        });
-      }
-    };
-
-    updateIndicator();
-  }, [activeSection]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -110,7 +82,7 @@ export function Header() {
               className="flex items-center gap-2 cursor-pointer"
             >
               <img
-                src="/images/logo.svg"
+                src={logo}
                 alt="Logo"
                 className="h-8 md:h-10 w-auto"
               />
@@ -121,98 +93,51 @@ export function Header() {
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-2 bg-secondary/30 backdrop-blur-sm rounded-full p-1 border border-primary/10 relative"
-                style={{ width: "max-content" }}
+                className="flex items-center gap-1 bg-secondary/30 backdrop-blur-sm rounded-full p-1.5 border border-primary/10 relative"
               >
-                {/* Sliding background highlight */}
-                <motion.span
-                  className="absolute bg-gradient-to-r from-primary to-accent rounded-full shadow-lg shadow-primary/50"
-                  style={{ height: "calc(100% - 8px)", top: "4px" }}
-                  animate={{
-                    left: indicatorStyle.left,
-                    width: indicatorStyle.width,
-                    opacity: [
-                      "experience",
-                      "work",
-                      "skills",
-                      "services",
-                      "blog",
-                    ].includes(activeSection)
-                      ? 1
-                      : 0,
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 30,
-                  }}
-                />
-
-                <button
-                  ref={experienceRef}
-                  onClick={() => scrollToSection("experience")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
-                >
-                  <span
-                    className={`font-medium transition-colors duration-300 ${
-                      activeSection === "experience" ? "text-white" : ""
+                {[
+                  { id: "experience", label: "Experience" },
+                  { id: "work", label: "Projects" },
+                  { id: "skills", label: "Skills" },
+                  { id: "services", label: "Services" },
+                  { id: "blog", label: "Blog" },
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`relative px-4 py-2 text-xs xl:text-sm font-medium transition-colors duration-300 z-10 whitespace-nowrap cursor-pointer nesthub:text-[13px] nesthub:px-2 nesthub:mx-0 ${
+                      activeSection === item.id
+                        ? "text-white"
+                        : "text-muted-foreground hover:text-white"
                     }`}
                   >
-                    Experience
-                  </span>
-                </button>
-                <button
-                  ref={workRef}
-                  onClick={() => scrollToSection("work")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
-                >
-                  <span
-                    className={`font-medium transition-colors duration-300 ${
-                      activeSection === "work" ? "text-white" : ""
-                    }`}
-                  >
-                    Projects
-                  </span>
-                </button>
-                <button
-                  ref={skillsRef}
-                  onClick={() => scrollToSection("skills")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
-                >
-                  <span
-                    className={`font-medium transition-colors duration-300 ${
-                      activeSection === "skills" ? "text-white" : ""
-                    }`}
-                  >
-                    Skills
-                  </span>
-                </button>
-                <button
-                  ref={servicesRef}
-                  onClick={() => scrollToSection("services")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
-                >
-                  <span
-                    className={`font-medium transition-colors duration-300 ${
-                      activeSection === "services" ? "text-white" : ""
-                    }`}
-                  >
-                    Services
-                  </span>
-                </button>
-                <button
-                  ref={blogRef}
-                  onClick={() => scrollToSection("blog")}
-                  className="relative text-foreground transition-colors duration-300 cursor-pointer text-xs xl:text-sm px-4 py-2 rounded-full z-10 whitespace-nowrap nesthub:text-[13px] nesthub:px-2 nesthub:mx-0"
-                >
-                  <span
-                    className={`font-medium transition-colors duration-300 ${
-                      activeSection === "blog" ? "text-white" : ""
-                    }`}
-                  >
-                    Blog
-                  </span>
-                </button>
+                    {activeSection === item.id && (
+                       <motion.div
+                        layoutId="activeGlow"
+                        className="absolute inset-0 bg-primary/20 blur-md rounded-full -z-10"
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 30,
+                        }}
+                      />
+                    )}
+                    <span className="relative">
+                      {item.label}
+                      {activeSection === item.id && (
+                        <motion.div
+                          layoutId="activeSection"
+                          className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-primary via-purple-500 to-accent rounded-full"
+                          transition={{
+                            type: "spring",
+                            stiffness: 380,
+                            damping: 30,
+                          }}
+                        />
+                      )}
+                    </span>
+                  </button>
+                ))}
               </motion.div>
             </div>
 
@@ -225,10 +150,10 @@ export function Header() {
               <Button
                 variant="outline"
                 size="sm"
-                className={`px-3 py-1.5 xl:px-4 xl:py-2 rounded-md text-xs xl:text-sm font-semibold flex items-center gap-2 border border-white transition-all duration-300 ${
+                className={`px-3 py-1.5 xl:px-4 xl:py-2 rounded-md text-xs xl:text-sm font-semibold flex items-center gap-2 border transition-all duration-300 ${
                   activeSection === "contact"
-                    ? "bg-white text-slate-950 shadow-[0_0_20px_rgba(255,255,255,0.4)]"
-                    : "text-white bg-transparent hover:bg-white hover:text-slate-950 shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+                    ? "bg-white text-slate-950 border-white shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:bg-white hover:text-slate-950"
+                    : "text-white bg-transparent border-white hover:bg-white hover:text-slate-950 shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
                 }`}
                 style={{ minHeight: "36px", maxHeight: "36px" }}
                 onClick={() => scrollToSection("contact")}

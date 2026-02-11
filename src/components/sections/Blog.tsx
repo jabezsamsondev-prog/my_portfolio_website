@@ -4,10 +4,20 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import "swiper/swiper-bundle.css";
 
+import post1 from "../../assets/images/blogs/post_1.png";
+import post2 from "../../assets/images/blogs/post_2.png";
+import post3 from "../../assets/images/blogs/post_3.jpg";
+import post4 from "../../assets/images/blogs/post_4.png";
+import post5 from "../../assets/images/blogs/post_5.jpg";
+import post6 from "../../assets/images/blogs/post_6.png";
+import post7 from "../../assets/images/blogs/post_7.png";
+import post8 from "../../assets/images/blogs/post_8.png";
+import post9 from "../../assets/images/blogs/post_9.png";
+
 const blogPosts = [
   {
     id: 9,
-    image: "/images/blogs/post_9.png",
+    image: post9,
     title:
       "The Hidden Tech Divide: Why 90% of Developers Will Be 'Average' in the AI Era",
     blogURL:
@@ -15,7 +25,7 @@ const blogPosts = [
   },
   {
     id: 8,
-    image: "/images/blogs/post_8.png",
+    image: post8,
     title:
       "We're Not Building Software for Humans Anymore — We're Building It for AI Agents",
     blogURL:
@@ -23,7 +33,7 @@ const blogPosts = [
   },
   {
     id: 7,
-    image: "/images/blogs/post_7.png",
+    image: post7,
     title:
       "The Silent Death of 'Search' — Why AI Answers Are Replacing Websites Without Anyone Noticing",
     blogURL:
@@ -31,14 +41,14 @@ const blogPosts = [
   },
   {
     id: 6,
-    image: "/images/blogs/post_6.png",
+    image: post6,
     title: "The Rise of GEO: Optimizing for AI-Powered Search in 2025",
     blogURL:
       "https://www.linkedin.com/pulse/rise-geo-optimizing-ai-powered-search-2025-jabez-samson-wqcac",
   },
   {
     id: 5,
-    image: "/images/blogs/post_5.jpg",
+    image: post5,
     title:
       "Semantic Search vs Traditional Keyword Matching: The Birth of Generative AI Chatbots",
     blogURL:
@@ -46,7 +56,7 @@ const blogPosts = [
   },
   {
     id: 4,
-    image: "/images/blogs/post_4.png",
+    image: post4,
     title:
       "Building My Portfolio with TypeScript: A Journey of Learning with AI",
     blogURL:
@@ -54,21 +64,21 @@ const blogPosts = [
   },
   {
     id: 3,
-    image: "/images/blogs/post_3.jpg",
+    image: post3,
     title: "Why Every Developer Should Build a Portfolio Early",
     blogURL:
       "https://www.linkedin.com/pulse/why-every-developer-should-build-portfolio-early-jabez-samson-ag4mc",
   },
   {
     id: 2,
-    image: "/images/blogs/post_2.png",
+    image: post2,
     title: "The Cure for Overwhelm: Break Work Into Tiny Wins",
     blogURL:
       "https://www.linkedin.com/pulse/cure-overwhelm-break-work-tiny-wins-jabez-samson-gutac",
   },
   {
     id: 1,
-    image: "/images/blogs/post_1.png",
+    image: post1,
     title: "Why Modern Web Experience Is More About Empathy Than Code",
     blogURL:
       "https://www.linkedin.com/pulse/why-modern-web-experience-more-empathy-than-code-jabez-samson-52rfc",
