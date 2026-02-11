@@ -191,7 +191,7 @@ export function Experience() {
                 </motion.div>
 
                 <Card
-                  className={`${
+                  className={`group ${
                     index === 0 || index === 2
                       ? "border-r-4 md:border-r-0 md:border-2 border-r-primary"
                       : "border-l-4 md:border-l-0 md:border-2 border-l-primary"
@@ -210,7 +210,7 @@ export function Experience() {
                             <div key={rIndex} className="relative pl-6">
                               {/* Connecting Line (only for non-last items) */}
                               {rIndex !== exp.roles.length - 1 && (
-                                <div className="absolute left-0 top-2 -bottom-8 w-0.5 bg-white/10" />
+                                <div className="absolute left-0 top-2 -bottom-8 w-0.5 bg-white/10 group-hover:bg-white group-hover:shadow-[0_0_8px_white] transition-colors duration-500" />
                               )}
                               
                               {/* Dot for role - Adjusted alignment (-left-1) */}

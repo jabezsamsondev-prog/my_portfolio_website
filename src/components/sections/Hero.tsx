@@ -283,7 +283,7 @@ export function Hero() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="group w-full sm:w-auto text-xs sm:text-sm md:text-sm lg:text-sm bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 hover:from-primary/20 hover:via-accent/20 hover:to-primary/20 bg-[length:200%_100%] hover:bg-right-top border-2 border-white/40 hover:border-white/80 transition-[background-position,border-color,box-shadow] duration-700 ease-out shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20"
+                  className="group w-full sm:w-auto text-xs sm:text-sm md:text-sm lg:text-sm border-2 text-white bg-transparent border-white hover:bg-white hover:text-slate-950 transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
                   asChild
                 >
                   <a

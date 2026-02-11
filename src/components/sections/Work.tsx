@@ -285,7 +285,7 @@ export function Work() {
                       size="sm"
                       className={`w-full transition-all duration-300 ${
                         project.github !== "#"
-                          ? "hover:bg-gradient-to-r hover:from-primary hover:via-accent hover:to-purple-500 hover:text-white hover:border-white"
+                          ? "text-white bg-transparent border-white hover:bg-white hover:text-slate-950 shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
                           : "opacity-60 bg-secondary/10"
                       }`}
                       asChild
