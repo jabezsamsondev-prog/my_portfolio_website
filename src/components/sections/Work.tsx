@@ -16,15 +16,39 @@ import familiCloud from "../../assets/projects/famili_cloud.png";
 import lmsMockup from "../../assets/projects/lms_mockup.png";
 import seniorCareCrm from "../../assets/projects/senior_care_crm.png";
 import graniteEcommerce from "../../assets/projects/granite_ecommerce.png";
-import fish2Shark from "../../assets/projects/proj_6.png";
-import ChromaMatch from "../../assets/projects/proj_7.png";
-import neonCipher from "../../assets/projects/proj_5.png";
 import ballChase from "../../assets/projects/proj_1.png";
 import whacAMole from "../../assets/projects/proj_2.png";
 import rockPaperScissors from "../../assets/projects/proj_3.png";
 import ticTacToe from "../../assets/projects/proj_4.png";
+import neonCipher from "../../assets/projects/proj_5.png";
+import fish2Shark from "../../assets/projects/proj_6.png";
+import chromaMatch from "../../assets/projects/proj_7.png";
+import chromaShift from "../../assets/projects/proj_8.png";
+import trueColor from "../../assets/projects/proj_9.png";
 
 const projects = [
+  {
+    title: "Chroma Shift",
+    description:
+      "A dynamic grid-based puzzle game that tests your pattern recognition with shifting mechanics. Features multiple difficulty tiers including an intense OMEGA mode.",
+    image: chromaShift,
+    tags: ["JavaScript", "Game Logic", "CSS3"],
+    github: "https://github.com/jabezsamsondev-prog/chroma_shift",
+    demo: "https://chroma-shift-27641.firebaseapp.com/",
+    category: "Games",
+    order: 55,
+  },
+  {
+    title: "True Color",
+    description:
+      "A reflex-based color identification challenge inspired by the Stroop effect. Race against the clock to match colors and text in this fast-paced cognitive test.",
+    image: trueColor,
+    tags: ["JavaScript", "Game Logic", "CSS3"],
+    github: "https://github.com/jabezsamsondev-prog/true_color",
+    demo: "https://true-color-d9a04.firebaseapp.com/",
+    category: "Games",
+    order: 54,
+  },
   {
     title: "Swift Steeds Trading & Consultancy",
     description:
@@ -113,7 +137,7 @@ const projects = [
     title: "Chroma Match",
     description:
       "A vibrant memory matching game that challenges your visual memory and pattern recognition skills. Features smooth animations, a sleek neon interface, and progressive difficulty levels to test your cognitive skills.",
-    image: ChromaMatch,
+    image: chromaMatch,
     tags: ["JavaScript", "Game Logic", "CSS3"],
     github: "https://github.com/jabezsamsondev-prog/chroma_match",
     demo: "https://chroma-match-a5339.firebaseapp.com/",
@@ -152,6 +176,7 @@ const projects = [
     demo: "https://fun-mole-game.firebaseapp.com/",
     category: "Games",
     order: 30,
+    hidden: true,
   },
   {
     title: "Rock Paper Scissors",
@@ -163,6 +188,7 @@ const projects = [
     demo: "https://rock-paper-scissors-cd587.firebaseapp.com/",
     category: "Games",
     order: 20,
+    hidden: true,
   },
   {
     title: "Tic Tac Toe",
@@ -174,6 +200,7 @@ const projects = [
     demo: "https://tic-tac-toe-8c50e.firebaseapp.com/",
     category: "Games",
     order: 10,
+    hidden: true,
   },
 ];
 
@@ -215,7 +242,9 @@ export function Work() {
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-12 text-center md:text-left">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">Latest Projects</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6">
+              Latest Projects
+            </h2>
             <div className="h-1.5 w-24 bg-gradient-to-r from-primary via-purple-400 to-secondary rounded-full mx-auto md:mx-0 mb-6 animate-gradient bg-[length:200%_auto]" />
           </div>
 
