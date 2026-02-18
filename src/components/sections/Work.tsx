@@ -11,6 +11,7 @@ import { Button } from "../ui/Button";
 import { Github, ExternalLink, Gamepad2, Lock, Ban } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import emptySlate from "../../assets/projects/proj_10.png";
 import swiftSteeds from "../../assets/projects/swiftsteeds.png";
 import familiCloud from "../../assets/projects/famili_cloud.png";
 import lmsMockup from "../../assets/projects/lms_mockup.png";
@@ -48,6 +49,17 @@ const projects = [
     demo: "https://true-color-d9a04.firebaseapp.com/",
     category: "Games",
     order: 54,
+  },
+  {
+    title: "EmptySlate E-Learning Platform",
+    description:
+      "A premium e-learning platform dedicated to bridging the gap between education and industry. Features immersive GSAP animations, hands-on technology courses, and a high-performance React 19 interface.",
+    image: emptySlate,
+    tags: ["React 19", "GSAP", "Vite", "Modern UI"],
+    github: "https://github.com/jabezsamsondev-prog/empty_slate",
+    demo: "https://www.emptyslate.in/",
+    category: "Frontend",
+    order: 68,
   },
   {
     title: "Swift Steeds Trading & Consultancy",
