@@ -14,9 +14,7 @@ import { useState } from "react";
 import emptySlate from "../../assets/projects/proj_10.png";
 import swiftSteeds from "../../assets/projects/swiftsteeds.png";
 import familiCloud from "../../assets/projects/famili_cloud.png";
-import lmsMockup from "../../assets/projects/lms_mockup.png";
 import seniorCareCrm from "../../assets/projects/senior_care_crm.png";
-import graniteEcommerce from "../../assets/projects/granite_ecommerce.png";
 import ballChase from "../../assets/projects/proj_1.png";
 import whacAMole from "../../assets/projects/proj_2.png";
 import rockPaperScissors from "../../assets/projects/proj_3.png";
@@ -26,8 +24,31 @@ import fish2Shark from "../../assets/projects/proj_6.png";
 import chromaMatch from "../../assets/projects/proj_7.png";
 import chromaShift from "../../assets/projects/proj_8.png";
 import trueColor from "../../assets/projects/proj_9.png";
+import cyberHack from "../../assets/projects/proj_11.png";
+import playerSoldImg from "../../assets/projects/enterprise_mockup.png";
 
 const projects = [
+  {
+    title: "Player Sold",
+    description: "Player Sold is a live auction platform for sports leagues with real-time bidding features and comprehensive analytics.",
+    image: playerSoldImg,
+    tags: ["React 19", "JavaScript", "Full Stack", "Vite"],
+    github: "#",
+    demo: "https://playersold.co.in/",
+    category: "Full Stack",
+    isConfidential: true,
+    order: 110,
+  },
+  {
+    title: "Connect the Dots",
+    description: "Classic dots and boxes game. Claim the most boxes to win against your opponent in this interactive grid-based challenge.",
+    image: trueColor,
+    tags: ["JavaScript", "Game Logic", "CSS3"],
+    github: "https://github.com/jabezsamsondev-prog/dots_and_boxes",
+    demo: "https://jsgamesbyjabez.firebaseapp.com/connect-dots/",
+    category: "Games",
+    order: 42,
+  },
   {
     title: "Chroma Shift",
     description:
@@ -35,7 +56,7 @@ const projects = [
     image: chromaShift,
     tags: ["JavaScript", "Game Logic", "CSS3"],
     github: "https://github.com/jabezsamsondev-prog/chroma_shift",
-    demo: "https://chroma-shift-27641.firebaseapp.com/",
+    demo: "https://jsgamesbyjabez.firebaseapp.com/chroma-shift/",
     category: "Games",
     order: 55,
   },
@@ -46,7 +67,7 @@ const projects = [
     image: trueColor,
     tags: ["JavaScript", "Game Logic", "CSS3"],
     github: "https://github.com/jabezsamsondev-prog/true_color",
-    demo: "https://true-color-d9a04.firebaseapp.com/",
+    demo: "https://jsgamesbyjabez.firebaseapp.com/true-color/",
     category: "Games",
     order: 54,
   },
@@ -56,10 +77,11 @@ const projects = [
       "A premium e-learning platform dedicated to bridging the gap between education and industry. Features immersive GSAP animations, hands-on technology courses, and a high-performance React 19 interface.",
     image: emptySlate,
     tags: ["React 19", "GSAP", "Vite", "Modern UI"],
-    github: "https://github.com/jabezsamsondev-prog/empty_slate",
+    github: "#",
     demo: "https://www.emptyslate.in/",
-    category: "Frontend",
-    order: 68,
+    category: "Full Stack",
+    isConfidential: true,
+    order: 105,
   },
   {
     title: "Swift Steeds Trading & Consultancy",
@@ -85,18 +107,7 @@ const projects = [
     isConfidential: true,
     order: 100,
   },
-  {
-    title: "Learning Management System",
-    description:
-      "A modern educational platform designed for skill development in Logistics and Supply Chain Management. Features course management, interactive learning modules, and progress tracking for students and educators.",
-    image: lmsMockup,
-    tags: ["LMS Setup", "Moodle", "JavaScript", "Design"],
-    github: "#",
-    demo: "https://edc.lsc-india.org/",
-    category: "Full Stack",
-    isConfidential: true,
-    order: 90,
-  },
+
   {
     title: "Care Platform - All in one CRM",
     description:
@@ -109,18 +120,7 @@ const projects = [
     isConfidential: true,
     order: 80,
   },
-  {
-    title: "Premium E-commerce Application",
-    description:
-      "A high-end e-commerce solution for a premier granite and stone supplier. Showcases premium slab galleries, project inspiration, and a sophisticated product catalog for luxury surfaces.",
-    image: graniteEcommerce,
-    tags: ["React", "JavaScript", "Node", "Stripe"],
-    github: "#",
-    demo: "#",
-    category: "Full Stack",
-    isConfidential: true,
-    order: 70,
-  },
+
   {
     title: "Fish2Shark Website for Client",
     description:
@@ -146,15 +146,26 @@ const projects = [
     hidden: true,
   },
   {
-    title: "Chroma Match",
+    title: "Chroma Memory Match",
     description:
       "A vibrant memory matching game that challenges your visual memory and pattern recognition skills. Features smooth animations, a sleek neon interface, and progressive difficulty levels to test your cognitive skills.",
     image: chromaMatch,
     tags: ["JavaScript", "Game Logic", "CSS3"],
     github: "https://github.com/jabezsamsondev-prog/chroma_match",
-    demo: "https://chroma-match-a5339.firebaseapp.com/",
+    demo: "https://jsgamesbyjabez.firebaseapp.com/chroma-match/",
     category: "Games",
     order: 48,
+  },
+  {
+    title: "Cyber Hack",
+    description:
+      "Crack the system in this neon number-guessing challenge. Use logical deduction to eliminate possibilities and breach the firewall within limited attempts.",
+    image: cyberHack,
+    tags: ["JavaScript", "Game Logic", "CSS3"],
+    github: "https://github.com/jabezsamsondev-prog/cyber_hack",
+    demo: "https://jsgamesbyjabez.firebaseapp.com/cyber-hack/",
+    category: "Games",
+    order: 46,
   },
   {
     title: "Neon Cipher",
@@ -163,7 +174,7 @@ const projects = [
     image: neonCipher,
     tags: ["JavaScript", "Game Logic", "CSS3"],
     github: "https://github.com/jabezsamsondev-prog/guessing_game",
-    demo: "https://neon-cipher-38ac2.firebaseapp.com/",
+    demo: "https://jsgamesbyjabez.firebaseapp.com/neon-cipher/",
     category: "Games",
     order: 45,
   },
@@ -174,18 +185,18 @@ const projects = [
     image: ballChase,
     tags: ["JavaScript", "Canvas API", "Game Logic"],
     github: "https://github.com/jabezsamsondev-prog/ball_chase_challenge.git",
-    demo: "https://ball-chase-188ee.firebaseapp.com/",
+    demo: "https://jsgamesbyjabez.firebaseapp.com/ball-chase/",
     category: "Games",
     order: 40,
   },
   {
-    title: "Whac-a-Mole",
+    title: "Mole Protocol",
     description:
       "Classic arcade-style game built with vanilla JavaScript. Test your reflexes by clicking moles as they randomly appear. Includes difficulty levels and high score system.",
     image: whacAMole,
     tags: ["HTML5", "CSS3", "JavaScript"],
     github: "https://github.com/jabezsamsondev-prog/whac-a-mole.git",
-    demo: "https://fun-mole-game.firebaseapp.com/",
+    demo: "https://jsgamesbyjabez.firebaseapp.com/whac-a-mole/",
     category: "Games",
     order: 30,
     hidden: true,
@@ -197,7 +208,7 @@ const projects = [
     image: rockPaperScissors,
     tags: ["JavaScript", "DOM", "Game Logic"],
     github: "https://github.com/jabezsamsondev-prog/rock-paper-scissors",
-    demo: "https://rock-paper-scissors-cd587.firebaseapp.com/",
+    demo: "https://jsgamesbyjabez.firebaseapp.com/rock-paper-scissors/",
     category: "Games",
     order: 20,
     hidden: true,
@@ -209,7 +220,7 @@ const projects = [
     image: ticTacToe,
     tags: ["JavaScript", "DOM", "Game Logic"],
     github: "https://github.com/jabezsamsondev-prog/modern-tic-tac-toe",
-    demo: "https://tic-tac-toe-8c50e.firebaseapp.com/",
+    demo: "https://jsgamesbyjabez.firebaseapp.com/tic-tac-toe/",
     category: "Games",
     order: 10,
     hidden: true,
@@ -218,13 +229,23 @@ const projects = [
 
 export function Work() {
   const [activeTab, setActiveTab] = useState("All");
-  const categories = ["All", "Full Stack", "Frontend", "Games"];
+  const categories = ["All", "Client", "Full Stack", "Frontend", "Games"];
 
   const visibleProjects = projects.filter((project) => !project.hidden);
+
+  const clientProjectTitles = [
+    "Care Platform - All in one CRM",
+    "EmptySlate E-Learning Platform",
+    "Famili Cloud",
+    "Fish2Shark Website for Client",
+    "Swift Steeds Trading & Consultancy",
+  ];
 
   const filteredProjects =
     activeTab === "All"
       ? visibleProjects
+      : activeTab === "Client"
+      ? visibleProjects.filter((project) => clientProjectTitles.includes(project.title))
       : visibleProjects.filter((project) => project.category === activeTab);
 
   const sortedProjects = [...filteredProjects].sort(

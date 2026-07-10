@@ -21,11 +21,10 @@ export function Hero() {
   };
 
   const titles = [
-    "Software Engineer",
+    "Lead Software Engineer",
     "Product Consultant",
     "Digital Architect",
     "Tech Enthusiast",
-    "Technical Writer",
   ];
 
   const [index, setIndex] = useState(0);
@@ -256,10 +255,10 @@ export function Hero() {
                 </span>
               </div> */}
               <p className="text-dark text-base mb-8 max-w-lg leading-loose mx-auto lg:mx-0">
-                A self-taught professional with 8+ years of experience crafting
-                modern, intuitive and visually striking web experiences and
-                ecosystems that are fast, responsive and reliable — built with
-                purpose to solve real-world problems.
+                A self-taught professional with experience exceeding nine years
+                crafting modern, intuitive and visually striking web experiences
+                and ecosystems that are fast, responsive and reliable — built
+                with purpose to solve real-world problems.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
@@ -286,10 +285,7 @@ export function Hero() {
                   className="group w-full sm:w-auto text-xs sm:text-sm md:text-sm lg:text-sm border-2 text-white bg-transparent border-white hover:bg-white hover:text-slate-950 transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
                   asChild
                 >
-                  <a
-                    href={cv}
-                    download="Jabez_Samson_CV.pdf"
-                  >
+                  <a href={cv} download="Jabez_Samson_CV.pdf">
                     Download CV
                     <motion.div
                       animate={{ y: [0, -3, 0] }}

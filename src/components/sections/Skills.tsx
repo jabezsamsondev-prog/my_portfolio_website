@@ -1,82 +1,50 @@
 import { Section } from "../ui/Section";
 import { Badge } from "../ui/Badge";
 import { motion } from "framer-motion";
-import { Code2, Wrench, Layout, Database, Briefcase, Cloud } from "lucide-react";
+import { Wrench, Layout, Database, Briefcase, Cloud, Sparkles } from "lucide-react";
 
 export function Skills() {
   const skillCategories = [
     {
       title: "Frontend Development",
       icon: Layout,
-      description: "Building beautiful, responsive user interfaces",
-      skills: [
-        "HTML / CSS",
-        "Tailwind CSS",
-        "JavaScript (ES6+)",
-        "TypeScript",
-        "React",
-        "Next.js",
-        "API Integration",
-      ],
-      theme: "cyan", 
+      description: "Modern, responsive interfaces and polished user experiences",
+      skills: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
+      theme: "cyan",
     },
     {
       title: "Backend Development",
       icon: Database,
-      description: "Robust server-side logic and database design",
-      skills: ["Node.js", "Express.js", "MongoDB", "Firebase", "REST APIs"],
+      description: "Reliable server-side logic and data-driven applications",
+      skills: ["Node.js", "Express.js", "Firebase", "REST APIs"],
       theme: "lime",
-    },
-    {
-      title: "Core Competencies",
-      icon: Code2,
-      description: "Fundamental engineering skills and mindset",
-      skills: [
-        "Problem Solving",
-        "Critical Thinking",
-        "Debugging",
-        "Workflow Management",
-        "Performance Optimization",
-      ],
-      theme: "rose",
     },
     {
       title: "Tools & Workflow",
       icon: Wrench,
-      description: "Efficiency boosters and development tools",
-      skills: [
-        "Git & GitHub",
-        "Postman",
-        "Sentry",
-        "Jira",
-        "Notion",
-        "Cursor AI",
-      ],
+      description: "Productive developer workflows and collaboration tools",
+      skills: ["Git & GitHub", "Jira", "Postman", "Notion"],
       theme: "yellow",
     },
     {
-      title: "Project Management",
+      title: "AI-Driven Development",
+      icon: Sparkles,
+      description: "Using AI tools to accelerate prototyping, coding, and content workflows",
+      skills: ["Claude", "ChatGPT", "Prompt Engineering", "AI-assisted Development"],
+      theme: "violet",
+    },
+    {
+      title: "Project Delivery",
       icon: Briefcase,
-      description: "Leading teams and delivering products",
-      skills: [
-        "Agile / Scrum",
-        "Requirement Analysis",
-        "Team Leadership",
-        "Client Communication",
-      ],
+      description: "Leading teams and delivering products with strong engineering judgment",
+      skills: ["Agile / Scrum", "Team Leadership", "Client Communication", "Problem Solving"],
       theme: "orange",
     },
     {
       title: "DevOps & Cloud",
       icon: Cloud,
-      description: "Deploying and scaling applications",
-      skills: [
-        "Vercel",
-        "Netlify",
-        "Firebase Hosting",
-        "DigitalOcean",
-        "CI/CD Basics",
-      ],
+      description: "Deploying and scaling applications with modern hosting",
+      skills: ["Vercel", "Firebase Hosting", "CI/CD Basics"],
       theme: "fuchsia",
     },
   ];
@@ -136,6 +104,15 @@ export function Skills() {
           title: "group-hover:text-fuchsia-400",
           badge: "group-hover:border-fuchsia-500/30 group-hover:bg-fuchsia-500/10 group-hover:text-fuchsia-200",
           glow: "bg-fuchsia-500/5",
+        };
+      case "violet":
+        return {
+          border: "group-hover:border-violet-500/50",
+          icon: "text-violet-400 group-hover:text-violet-300",
+          iconBg: "group-hover:bg-violet-500/20",
+          title: "group-hover:text-violet-400",
+          badge: "group-hover:border-violet-500/30 group-hover:bg-violet-500/10 group-hover:text-violet-200",
+          glow: "bg-violet-500/5",
         };
       default:
         return {
@@ -201,13 +178,13 @@ export function Skills() {
                 className="group relative h-full"
               >
                 <div 
-                    className={`h-full relative overflow-hidden rounded-2xl border border-white/5 bg-zinc-900/40 backdrop-blur-sm p-6 sm:p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${themeClasses.border}`}
+                    className={`h-full min-h-[220px] relative overflow-hidden rounded-2xl border border-white/5 bg-zinc-900/40 backdrop-blur-sm p-5 sm:p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${themeClasses.border}`}
                 >
                     {/* Hover Glow Background - Subtle */}
                     <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${themeClasses.glow} pointer-events-none`} />
 
                     <div className="relative z-10">
-                        <div className="mb-6 flex items-center justify-between">
+                        <div className="mb-4 flex items-center justify-between">
                             <div className={`p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-300 group-hover:scale-110 ${themeClasses.icon} ${themeClasses.iconBg}`}>
                                 <IconComponent className="h-8 w-8" />
                             </div>
@@ -216,7 +193,7 @@ export function Skills() {
                         <h3 className={`text-xl font-bold mb-2 text-foreground transition-colors duration-300 ${themeClasses.title}`}>
                             {category.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground mb-6 line-clamp-2 group-hover:text-muted-foreground/80 transition-colors">
+                        <p className="text-sm text-muted-foreground mb-4 line-clamp-2 group-hover:text-muted-foreground/80 transition-colors">
                            {category.description}
                         </p>
 

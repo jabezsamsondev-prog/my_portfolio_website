@@ -3,7 +3,6 @@ import { About } from "./components/sections/About";
 import { Skills } from "./components/sections/Skills";
 import { Experience } from "./components/sections/Experience";
 import { Work } from "./components/sections/Work";
-import { Services } from "./components/sections/Services";
 import { Highlights } from "./components/sections/Highlights";
 import { Inspiration } from "./components/sections/Inspiration";
 import { Contact } from "./components/sections/Contact";
@@ -24,7 +23,8 @@ function App() {
       <Experience />
       <Work />
       <Skills />
-      <Services />
+      {/* TODO: Enable Services */}
+      {/* <Services /> */}
       <BlogSection />
       <About />
       <Inspiration />
@@ -87,7 +87,8 @@ function App() {
                 >
                   Projects
                 </a>
-                <a 
+                {/* TODO: Enable Services */}
+                {/* <a 
                   href="#services" 
                   onClick={(e) => {
                     e.preventDefault();
@@ -96,7 +97,7 @@ function App() {
                   className="text-sm text-muted-foreground hover:text-purple-300 transition-colors cursor-pointer"
                 >
                   Services
-                </a>
+                </a> */}
                 <a 
                   href="#experience" 
                   onClick={(e) => {

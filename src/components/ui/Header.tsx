@@ -1,6 +1,6 @@
 import { Button } from "./Button";
 import { motion } from "framer-motion";
-import { Menu, ArrowDownToLine } from "lucide-react";
+import { Menu, Mail } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import { SidebarMenu } from "./SidebarMenu";
@@ -20,7 +20,7 @@ export function Header() {
         "hero",
         "experience",
         "work",
-        "services",
+        // "services", // TODO: Enable Services
         "skills",
         "highlights",
         "about",
@@ -99,7 +99,7 @@ export function Header() {
                   { id: "experience", label: "Experience" },
                   { id: "work", label: "Projects" },
                   { id: "skills", label: "Skills" },
-                  { id: "services", label: "Services" },
+                  // { id: "services", label: "Services" }, // TODO: Enable Services
                   { id: "blog", label: "Blog" },
                 ].map((item) => (
                   <button
@@ -159,18 +159,18 @@ export function Header() {
                 onClick={() => scrollToSection("contact")}
               >
                 <span className="flex items-center gap-2">
-                  Contact
                   <motion.div
-                    animate={{ x: [0, 3, 0] }}
+                    animate={{ scale: [1, 1.1, 1] }}
                     transition={{
-                      duration: 1.5,
+                      duration: 2,
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
                     className="inline-block"
                   >
-                    <ArrowDownToLine className="h-4 w-4 -rotate-90" />
+                    <Mail className="h-4 w-4" />
                   </motion.div>
+                  Contact
                 </span>
               </Button>
               <a

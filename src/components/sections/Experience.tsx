@@ -14,11 +14,28 @@ import { useRef } from "react";
 
 const experiences = [
   {
+    company: "Tekniik Pvt. Ltd., Chennai",
+    role: "Lead Senior Software Engineer",
+    period: "May 2026 - Present",
+    description: [
+      "Leading the design and delivery of scalable software solutions while driving architectural decisions and engineering excellence.",
+      "Collaborating with product, design, and engineering teams to transform business goals into reliable, user-focused applications.",
+      "Mentoring senior and mid-level engineers and ensuring high standards in performance, maintainability, and team execution.",
+    ],
+    skills: [
+      "Leadership",
+      "System Architecture",
+      "React",
+      "TypeScript",
+      "Team Mentoring",
+    ],
+  },
+  {
     company: "Devship Pvt. Ltd.",
     roles: [
       {
         role: "Senior Software Developer",
-        period: "2022 - Present",
+        period: "June 2022 - May 2026",
         description: [
           "Led front-end development for a comprehensive CRM system, building an intuitive admin dashboard and client-facing features including training modules and e-commerce capabilities.",
           "Collaborated with cross-functional teams to define project requirements, manage timelines and ensure the delivery of high-quality, scalable code.",
@@ -26,7 +43,7 @@ const experiences = [
       },
       {
         role: "Software Developer",
-        period: "2021 - 2022",
+        period: "July 2021 - May 2022",
         description: [
           "Built few other full-fledged web applications involving features like Inventory Management, E-Commerce and Financial Review.",
         ],
@@ -44,7 +61,7 @@ const experiences = [
   {
     company: "Logistics Sector Skill Council",
     role: "Front-end Web Developer",
-    period: "2018 - 2021",
+    period: "Nov 2018 - July 2021",
     description: [
       "Spearheaded end-to-end development and delivery of Learning Management Systems (LMSs), from requirement gathering to deployment and post-launch support.",
       "Curated and structured educational content to align with client requirements and user engagement goals.",
@@ -62,7 +79,7 @@ const experiences = [
   {
     company: "Evansys Technologies",
     role: "Front-end Web Developer",
-    period: "2017 - 2018",
+    period: "May 2017 - Oct 2018",
     description: [
       "Developed and managed websites for clients from educational institutions starting from conception to deployment followed by post-launch support and maintenance.",
     ],
